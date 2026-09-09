@@ -8,6 +8,10 @@ A concise overview of automating systems management:
 - Introduce the design and explain its structure.
 - Frame the design as a closed semantic world with established narratives.
 - Explain that the closed semantic world can be reasoned about given that the design establishes the necessary meaning
+- Define failure
+     - Explain that the failure is a confusing word because of its traditional use
+     - In a closed semantic world, failure is the designs assumption being refuted by reality
+     - Through root cause analysis, invariants which predict the failure are learnt
 - Explain how reasoning about the world does the following:
    - Failure prediction and resolution using invariants
         - Semantic invalidity is when the world state means the designs intentions can't be realized.
@@ -15,8 +19,7 @@ A concise overview of automating systems management:
    - Testing
         - Test that semantically invalid narratives are not possible
    - Failure Diagnosis
-        - Test that design respects all known invariants
-        - Failure only means new semantics must be learnt
+        - When failure does occur, it can be diagnosed using the invariant violation
    - Debugging
         - Which invariant was violated?
 - Explain how any form of reasoning is possible given that the necessary meaning has been established
@@ -31,6 +34,9 @@ A concise overview of automating systems management:
     - DAL script is an input into the engine
 - Explain how these two together would automate the reasoning of the world
     - Engine would automatically answer the question given the necessary meaning has been established
+- Specifically highlight automated failure diagnosis
+     - Once all known invariants are tested to ensure design respects 
+     - Failure only means new semantics must be learnt
 
 
 ### Computable Semantic Model
