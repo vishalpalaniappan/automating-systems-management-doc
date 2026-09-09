@@ -47,6 +47,8 @@ A concise overview of automating systems management:
 - Using the CSM built from CSP's, the software system can be entirely reasoned about using the engine
 - This means that the management of software systems can be fully automated because any meaningful question that is asked about the design can be answered by the engine given that the necessary meaning has been established
 - As part of the automated management, a learning loop emerges where the design learns new semantics through root cause analysis on environments that caused the failure
+- The learning loop for failures is just one part of systems management, there are many scenarios in which abnormal behavior is managed
+- Ultimately, any question that cannot be answered results in semantics being expanded through root cause analysis  
 - However, practically, this would require all the environments to be preserved
 - To address this, the designs unambiguous nature is exploited to log non-reproducible information and to apply domain specific compression to the environments to preserve them losslessly at minimal cost
 - Compressed Log Processor is a tool that can be leveraged to address this problem, it has been proven at a petabyte scale.
@@ -59,6 +61,7 @@ A concise overview of automating systems management:
 - Practical system that realizes this solution.
 - Present system diagram.
 - The engine reasons abut the world, eliminates failures and then instruments the execution with the information it needs to learn from failures
+- The engine also answers any arbitrary question about the world to manage it
 - CLP preserves all the environments
 - Engine also reasons about the world in other ways, the only limitation is the meaning that is encoded
 - Since the meaning of the system and its state is unambiguous, the orchestration can surgically manage the system to recovery from failures and perform life cycle operations
@@ -80,6 +83,3 @@ A concise overview of automating systems management:
 - CLP is novel solution that address unknown that prevented automated systems management
 - Engine is simply processing the design
 - Conclude by explaining how this addresses the goals laid out at the start
-
-### Extended Opportunities
-- I will write this after the rest, I've already shared some meaningful ideas in my more verbose doc.
