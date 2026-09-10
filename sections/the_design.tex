@@ -16,6 +16,7 @@ The design is said to be in a semantically invalid state when one of its intenti
 In order for the closed semantic world to participate in reality, it must be implemented on a substrate. When realized on a substrate, reality can refute the assumptions of the closed semantic world and the design fails because its intentions can't be realized. As a result, the design must learn new semantics to continue realizing its intentions. So in a closed semantic world, a failure can be understood as an assumption made by the design that reality refutes and I will be using the world failure in this context for the rest of the document. When the implementation on a substrate halts because semantic invalidity was allowed to persist, I will refer to this as a mechanical failure.
 
 \begin{figure}[htbp]
+    \centering
     \includesvg[
         width=0.8\linewidth
     ]{assets/invariant_path.svg}
@@ -43,6 +44,8 @@ As part of the design, each behavior is has an unambiguous meaning, it unambiguo
 
 In this example, the meaning of the behavior placeBookOnShelf is composed by the specified behaviors. This is no different than how words work as part of human communcation, the word lion is a compression of the meaning of a lion, this includes the apperance, sound etc. A closed semantic world unambiguously establishes the meaning within its world. Through the composition of behaviors, each level of meaning establishes a coherent world.
 
+\subsubsection{Shared Meaning}
+
 \begin{figure}[htbp]
     \centering
     \includesvg[
@@ -51,6 +54,7 @@ In this example, the meaning of the behavior placeBookOnShelf is composed by the
     \caption{Semantic Comaptibility through Shared Meaning}
     \label{fig:semantically_valid_interactions}
 \end{figure}
+
 
 When two designs interact with each other and have shared meaning, they form a larger semantic world through semantically compatible interactions. In this way, each part of a larger distributed system can be designed and assembled ino a larger closed semantic world. 
 
