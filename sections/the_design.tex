@@ -1,10 +1,26 @@
 A design is a closed semantic world. It contains participants whose state is transformed through the design's unambiguous behaviors. When the environment interacts with the design, it introduces a change to the state of the world. This state transition may enable new behaviors, which the design deterministically resolves in response to the updated state, producing further state changes. When resolving a state, the design may either exhibit behavior directly or deterministically select which behaviors are enabled as a reaction to the state. The design continues reacting to each resulting state transition until no further behavior is enabled and the world reaches a stable semantic state. This chain of resolutions constitutes the structure of the design itself and provides the environment a fully specified path through it.
 
+\begin{figure}[htbp]
+    \includesvg[
+        width=0.99\linewidth
+    ]{assets/design.svg}
+    \caption{The Design}
+    \label{fig:invariant_path}
+\end{figure}
+
 \subsection{Semantic Invalidity}
 
 The design is said to be in a semantically invalid state when one of its intentions can’t be realized as a result of that state. When the environment provides an input into this closed semantic world, in order to continue successfully realizing its intentions, the design must prevent semantically invalid states from persisting in its world.
 
 In order for the closed semantic world to participate in reality, it must be implemented on a substrate. When reality refutes the assumptions of the closed semantic world and the design fails because its intentions can't be realized, the design must learn new semantics to continue realizing its intentions. So in a closed semantic world, a failure can be understood as an assumption made by the design that reality refutes and I will be using the world failure in this context for the rest of the document. When the implementation halts because semantic invalidity was allowed to persist, I will refer to this as a mechanical failure.
+
+\begin{figure}[htbp]
+    \includesvg[
+        width=0.99\linewidth
+    ]{assets/invariant_path.svg}
+    \caption{Invariant Path}
+    \label{fig:invariant_path}
+\end{figure}
 
 To prevent semantically invalid states from persisting in its reality, semantic invariants act as markers that identify the semantically invalid state and predict the failure of downstream behaviors. This establishes an invariant path from the semantically invalid state to the intention that can’t be realized and in order to restore semantic validity, the design must provide a semantically valid path to resolve the state.
 
@@ -14,17 +30,15 @@ Another way of describing a closed semantic world is through the narratives that
 
 \subsection{Reasoning about Closed Semantic World}
 
+Since the design is a closed semantic world, it is possible to reason about the world. For example, the invariants placed on a behavior can be used to reason about where to place the semantic invariants. This is possible because the narrative of the world unambiguously identifies where the participants enter a semantically invalid state and will inevitably reach the behavior. Furthermore, it is possible to identify the path that should be established to restore the semantically valid state.
+
+This form of reasoning can be used to perform many meaningful actions on the world and I will list a few below:
 \begin{itemize}
-    \item Explain how the world can be reasoned about given that the necessary meaning has been established.
-    \item Explain how this does the following:
-    \begin{itemize}
-        \item failure prediction and resolution
-        \item testing
-        \item failure diagnosis
-        \item debugging
-    \end{itemize}
-    \item Explain how any form of reasoning is possible given that the necessary meaning has been established.
-    \item Explain how if the design is represented in an unambiguous and structured form, an engine can automatically reason about the entire world.
+    \item The ability to place invariants and resolve the semantically invalid states is failure prediction and resolution within the closed semantic world. 
+    \item The ability to walk down semantically invalid narrative paths and identify if the design selects a semantically valid narrative is testing the world.
+    \item If all the invariants are tested but the design still fails, the failure is automatically diagnosed because it can only mean that new semantics must be learnt.
 \end{itemize}
 
+Ultimately, these automates debugging given that the designs meaning is faithfully represented by its implementation. However, the kinds of reasoning possible are only limited by the meaning established in the world. 
 
+If the closed semantic world were to be established in an unambiguous and structured form, then an engine would be able to automatically reason about the world. In the next section, I will discuss the implications of this capability.
