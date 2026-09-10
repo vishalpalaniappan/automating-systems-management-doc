@@ -20,7 +20,7 @@ An engine can use the DAL definition to automatically reason about the world. It
     \label{fig:ideal_learning}
 \end{figure}
 
-One of the powerful implications of this is that since the engine reasons about the world, it can eliminate any semantically invalid narratives from the world. This means that through the execution of the design, the engine can reason to automatically diagnosed any failures. A failure can only mean that the design must learn new semantics. This is possible because that the engine can use the meaning of the constructed world to automatically diagnose the failure and identify where the semantics of the world has to expand through root cause analysis. Through this process, the engine will learn how to answer the meaningful question and eliminate the failure.
+By reasoning about the world, the engine can eliminate any semantically invalid narratives. This means that by reasoning about the execution of the design to identify semantically invalid states, the failure can be automatically diagnosed. This is possible because that the engine can use the meaning of the constructed world to automatically diagnose the failure in the execution and identify where the semantics of the world has to expand through root cause analysis. Through this process, the engine will learn how to answer the meaningful question and eliminate the failure.
 
 To do this, the following steps are neessary:
 \begin{itemize}
@@ -30,4 +30,4 @@ To do this, the following steps are neessary:
 
 If the semantic gap between the implementation and the design is eliminated and the execution is losslessly preserved, it would enable a determinstic learning loop. More importantly, as a result of this, any meaningful question about the world can be automatically answered or an automatic process would collect the necessary diagnostic information needed to learn how to answer the question.
 
-In the following sections, I will explain how a Computable Semantic Model (CSM) can be used to eliminate the semantic gap between the design and the implementation. Then I will explain how domain specific compression can be used to losslessly preserve all the narratives experienced in the world and finally I will explain how all of this works to fully automate systems management.
+In the following sections, I will explain how a Computable Semantic Model (CSM) can be used to eliminate the semantic gap between the design and the implementation. Then I will explain how domain specific compression can be used to losslessly preserve all the narratives experienced in the world so the engine can deterministically reason about it and finally I will explain how all of this works to fully automate systems management.
