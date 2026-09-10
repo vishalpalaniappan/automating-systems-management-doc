@@ -2,8 +2,12 @@ In order for the engine to reason about the execution of the design, the semanti
 
 If the implementation does realize the meaning of the design faithfully, then all the automation that is enabled by the engine reasoning about the design can be leveraged. To make this possible, the design must be established as a Computable Semantic Model (CSM) that is built from Computable Semantic Primitives (CSP).
 
-\subsection{Computable Semantic Model}
-A CSM is built by establishing the realization of the designs meaning. This means that the design itself is executable. 
+\subsection{Implementing Computable Semantic Model}
+A CSM is built by establishing the realization of the designs meaning. This means that the design itself is executable. The design establishes the first behavior it exhibits and then the meaning of the design reacts to each impulse from the environment until it reaches a semantically stable state. 
+
+However, there is still the possibility that the provided realization doesn't actually realize the meaning of the design, in which case, the engine cannot reason about the world in a reliable way. Moreover, the engine can only reason about the world through on the meaning that was specified. So unless the design makes all the releveant semantics available, the engine will be unable to determine the worlds correctness. So the engine will know that there is a failure and it won't be able to explain why until it learns the missing semantics.
+
+In the next section, I will describe how designs built from Computable Semantic Primitives addresses both of these problems.
 
 \subsection{Computable Semantic Primitives}
 CSP
