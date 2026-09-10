@@ -1,9 +1,9 @@
 In order for the engine to reason about the execution of the design, the semantic gap between the design and the implementation must be eliminated. If this is not done, then the engine cannot deterministically reason about the world because there will be no way to know if the semantics need to expand or if the implementation doesn't realize the meaning of the design.
 
-If the implementation does realize the meaning of the design faithfully, then all the automation that is enabled by the engine reasoning about the design can be leveraged. To make this possible, the design must be established as a Computable Semantic Model (CSM) that is built from Computable Semantic Primitives (CSP).
+If the implementation does realize the meaning of the design faithfully, then all the automation that is enabled by the engine reasoning about the design can be leveraged. To make this possible, the design must be established as a Computable Semantic Model (CSM) that is built from Computable Semantic Primitives (CSP) and I will describe how in the following sections.
 
-\subsection{Implementing Computable Semantic Model}
-A CSM is built by establishing the realization of the designs meaning. The design establishes the first behavior it exhibits and then the design reacts to each impulse from the environment until it reaches a semantically stable state. This means that the design itself is executable.
+\subsection{Implementing a Computable Semantic Model}
+A CSM is built by establishing the implementation of the designs meaning enabling the implementation of the design to be directly synthesized into an executable form. The design establishes the first behavior it exhibits and then the design reacts to each impulse from the environment until it reaches a semantically stable state.
 
 However, there is still the possibility that the provided implementation doesn't actually realize the meaning of the design, in which case, the engine cannot reason about the world in a reliable way. Moreover, the engine can only reason about the world based on the meaning that was specified. So unless the design makes all the releveant semantics available, the engine will be unable to determine the worlds correctness. So the engine will know that there is a failure and it won't be able to explain why until it learns the missing semantics.
 
@@ -11,14 +11,23 @@ In the next section, I will describe how designs built from Computable Semantic 
 
 \subsection{Computable Semantic Primitives}
 
-Computable Semantic Primitives (CSP's) are primitive semantic units that can be used to construct the meaning of the semantic world. Since the world is constructed from meaningful atoms, it can be reasoned about completely to eliminate all semantically invalid narratives. Since the primitive units can be synthesized into an implementation by definition, this transforms the DAL into a declarative language that establishes the meaning of a closed semantic world and synthesizes the meaning of that world as an implementation, effectively making the design itself executable.
+Computable Semantic Primitives (CSP's) are primitive computable semantic units that can be used to construct the meaning of the semantic world. Since the world is constructed from meaningful atoms that have uambiguous invariants, it can be reasoned about completely to eliminate all semantically invalid narratives. Since the primitive units can be synthesized into an implementation by definition, this transforms the DAL into a declarative language that establishes the meaning of a closed semantic world and synthesizes the meaning of that world as an implementation, effectively making the design itself executable.
+
+\begin{figure}[htbp]
+    \centering
+    \includesvg[
+        width=0.65\linewidth
+    ]{assets/csm.svg}
+    \caption{Computable Semantic Model}
+    \label{fig:csm}
+\end{figure}
 
 As previous sections mentioned, the engines ability to reason about the execution of the world is dependent on there being no semantic gap between the design and the implementation. Using CSP's solves this problem elagantly in multiple ways:
 \begin{enumerate}
     \item It allows the engine to fully reason about the constructed world to eliminate any semantically invalid narratives. 
-    \item It allows the engine to reason about the execution to automatically diagnose any failures and motivate the necessary root cause analysis to learn new semantics. Through this process.
+    \item It allows the engine to reason about the execution to automatically diagnose any failures and motivate the necessary root cause analysis to learn new semantics.
 \end{enumerate}
 
-Essentially, now that the constructed model and the execution have the same meaning, the engine can automatically identify where the semantics need to expand because reality will refute the designs claims through failures. 
+Essentially, now that the constructed model and the execution have the same meaning, the engine can automatically identify where the semantics need to expand because reality will refute the designs assumptions through failures. 
 
-However, this automation will still not be possible unless the engine actually has a complete account of the execution necessary to diagnose the failure. In the next section, I will describe how the CSM's unambiguous nature can be leveraged to economically capture the necessary information through instrumentation and how it can be used to apply domain specific compression to the data to preserve the information at minimal cost.
+However, this automation will still not be possible unless the engine actually has a complete account of the execution to diagnose the failure. In the next section, I will describe how the CSM's unambiguous nature can be leveraged to economically capture the necessary information through instrumentation and how it can be used to apply domain specific compression to the data to preserve the information at minimal cost.
