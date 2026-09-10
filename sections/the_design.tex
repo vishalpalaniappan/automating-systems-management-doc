@@ -3,7 +3,7 @@ A design is a closed semantic world. It contains participants whose state is tra
 \begin{figure}[htbp]
     \centering
     \includesvg[
-        width=0.9\linewidth
+        width=0.65\linewidth
     ]{assets/design.svg}
     \caption{The Design}
     \label{fig:the_design}
@@ -17,7 +17,7 @@ In order for the closed semantic world to participate in reality, it must be imp
 
 \begin{figure}[htbp]
     \includesvg[
-        width=0.99\linewidth
+        width=0.8\linewidth
     ]{assets/invariant_path.svg}
     \caption{Semantically Invalid Narrative and Semantically Valid Narrative}
     \label{fig:invariant_path}
@@ -41,11 +41,24 @@ As part of the design, each behavior is assigned an unambiguous meaning. When a 
     \end{itemize}
 \end{itemize}
 
-In this example, the meaning of the behavior ttext{placeBookOnShelf} is composed by the specified behaviors. This is no different than how words work as part of human communcation, the word ttext{lion} is a compression of the meaning of a lion, this includes the apperance, sound etc. A closed semantic world unambiguously establishes the meaning within this world. 
+In this example, the meaning of the behavior placeBookOnShelf is composed by the specified behaviors. This is no different than how words work as part of human communcation, the word lion is a compression of the meaning of a lion, this includes the apperance, sound etc. A closed semantic world unambiguously establishes the meaning within this world. 
 
-When two designs interact with each other and have shared meaning, they form a larger semantic world through semantically compatible interactions. In this way, each part of a larger distributed system can be designed and assembled ino a larger world.
+\begin{figure}[htbp]
+    \centering
+    \includesvg[
+        width=0.8\linewidth
+    ]{assets/semantically_valid_interaction.svg}
+    \caption{Semantic Comaptibility through Shared Meaning}
+    \label{fig:semantically_valid_interactions}
+\end{figure}
 
-\subsection{Reasoning about Closed Semantic World}
+When two designs interact with each other and have shared meaning, they form a larger semantic world through semantically compatible interactions. In this way, each part of a larger distributed system can be designed and assembled ino a larger world. 
+
+Figure~\ref{fig:semantically_valid_interactions} demonstrates this using a distributed image compression system. For example, when the database is designed, the meaning of the database user is established. When the image compression service interacts with the database, it assumes the role of the databse user, thus establishing shared meaning with the database.
+
+The next section describes how the world can be reasoned about through its computable semantic model. The same principles described are applicable to larger closed semantic worlds construtured through semantically compatible interactions.
+
+\subsection{Reasoning about the World}
 
 Since the design is a closed semantic world, it is possible to reason about the world. For example, the invariants placed on a behavior can be used to reason about where to place the semantic invariants. This is possible because the narrative of the world unambiguously identifies where the participants enter a semantically invalid state and will inevitably reach the behavior. Furthermore, it is possible to identify the path that should be established to restore the semantically valid state.
 
