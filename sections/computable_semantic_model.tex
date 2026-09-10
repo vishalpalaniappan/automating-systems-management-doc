@@ -5,6 +5,15 @@ If the implementation does realize the meaning of the design faithfully, then al
 \subsection{Implementing a Computable Semantic Model}
 A CSM is built by establishing the implementation of the designs meaning enabling the implementation of the design to be directly synthesized into an executable form. The design establishes the first behavior it exhibits and then the design reacts to each impulse from the environment until it reaches a semantically stable state.
 
+\begin{figure}[htbp]
+    \centering
+    \includesvg[
+        width=0.80\linewidth
+    ]{assets/csm.svg}
+    \caption{Computable Semantic Model}
+    \label{fig:csm}
+\end{figure}
+
 However, there is still the possibility that the provided implementation doesn't actually realize the meaning of the design, in which case, the engine cannot reason about the world in a reliable way. Moreover, the engine can only reason about the world based on the meaning that was specified. So unless the design makes all the releveant semantics available, the engine will be unable to determine the worlds correctness. So the engine will know that there is a failure and it won't be able to explain why until it learns the missing semantics.
 
 In the next section, I will describe how designs built from Computable Semantic Primitives addresses both of these problems.
@@ -16,10 +25,10 @@ Computable Semantic Primitives (CSP's) are primitive computable semantic units t
 \begin{figure}[htbp]
     \centering
     \includesvg[
-        width=0.65\linewidth
-    ]{assets/csm.svg}
-    \caption{Computable Semantic Model}
-    \label{fig:csm}
+        width=0.80\linewidth
+    ]{assets/csp.svg}
+    \caption{World Meaning constructed from Computable Semantic Primitives}
+    \label{fig:csp}
 \end{figure}
 
 As previous sections mentioned, the engines ability to reason about the execution of the world is dependent on there being no semantic gap between the design and the implementation. Using CSP's solves this problem elagantly in multiple ways:
