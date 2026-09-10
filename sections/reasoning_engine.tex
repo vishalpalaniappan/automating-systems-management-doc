@@ -2,7 +2,15 @@ As the previous section established, the design is a structure that can be reaso
 
 To make this possible, the design must be written in a Design Abstraction Language (DAL). The DAL is a declarative language that is used fully establish the closed semantic world. The scope of the DAL includes all the meaning needed to fully define the world (behvaiors, participants, attributes, invariants, etc).
 
-An engine can use the DAL script to automatically reason about the world. It can use the meaning of the design to enforce its own definition of correctness. The ability of the engine to reason about the world is limited by the meaning that has been established. Another way to frame this is to view it as meaningful questions that can be asked about the world to get an answer from the engine. If a meaningful question cannot be answered, then the meaning of the DAL must be expanded to able to answer the question.
+\begin{figure}[htbp]
+    \includesvg[
+        width=0.99\linewidth
+    ]{assets/reshape_design.svg}
+    \caption{Automated Reasoning to Reshape Narrative}
+    \label{fig:reshape_design}
+\end{figure}
+
+An engine can use the DAL definition to automatically reason about the world. It can use the meaning of the design to enforce its own definition of correctness. The ability of the engine to reason about the world is limited by the meaning that has been established. Any meaningful qquesiton about the world that can't be answered results in semantic expansion of the world.
 
 \begin{figure}[htbp]
     \includesvg[
