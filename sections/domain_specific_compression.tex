@@ -2,11 +2,27 @@ In order to preserve all the diagnostic data necessary for the engine to determi
 
 \subsection{Compressed Log Processor}
 
-Practically, this can be achieved using a tool named Compressed Log Processor (CLP). It is an open source tool that can apply DSC and search the data without decompression. More importantly, it has proven that DSC is practical at a petabyte scale. Currently, CLP compresses structured and unstructured logs by exploiting their domain structure. However, in its current form, the structure of the variables is not know, so CLP is not maximizing compression it can achieve.
+Practically, this can be achieved using a tool named Compressed Log Processor (CLP). It is an open source tool that can apply DSC and search the compressed data without decompression. More importantly, it has proven that DSC is practical at a petabyte scale. Currently, CLP compresses structured and unstructured logs by exploiting their known domain structure. However, in its current form, the domain structure of the variables is not know, so CLP is not maximizing compression it can achieve.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.2\textwidth]{assets/clp-logo.png}
+    \caption{CLP Logo}
+    \label{fig:clp_logi}
+\end{figure}
 
 Using the CSM, CLP can be transformed into a DSC engine. CLP's gains come from a lack of ambiguity and the CSM works to eliminate ambiguity entirely in its domain, thus CLP's compression will improve significantly through this process. More importantly, since the data exists as part of a structure with unambiguous meaning, the compression will improve further by exploiting the repetitive and predicable nature of programs.
 
-When the engine replays the execution using the collected diagnostic data, the narratives that are played out in the semantic world can be preserved by CLP at minimal cost. This means that the engine will never have to re-compute the same transformation twice. Instead, it can leverage the feature of CLP that enables search without decompression to identify the narrative has already been computed. 
+When the engine replays the execution using the collected diagnostic to automatically diagnose the failures, the narratives that are played out in the semantic world can be preserved by CLP at minimal cost. This means that the engine will never have to re-compute the same transformation twice. Instead, it can leverage CLP's search without decompression feature to identify if the narrative has already been computed. 
 
-This creates a very powerful capability where CLP contains the entire experiential history of the closed semantic world. In addition to CSM, this is what allows the engine to reason about the world deterministically. Moreover, in the process, CLP contains the lossless record of the environment seen by the closed semantic world. This will then enable the environment itself to be modelled empirically and allow it its meaning to enter the closed semantic world. With time, the CSM will be able to predict the environment by design and optimize its performance. 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{assets/clp-complete-solution.png}
+    \caption{Overview of CLP's current solution.}
+    \label{fig:clp_solution_current}
+\end{figure}
+
+This creates a very powerful ability where CLP contains the entire experiential history of the closed semantic world. When combined with the CSM, this is what allows the engine to reason about the world deterministically. CLP's search performance will also become more optimized since the both the structure and the meaning of the data are entirely unambiguous. The queries themselves are inherently semantic because the data exists as part of a closed semantic world and the queries can be meaningfully structured. 
+
+Ultimately, this will result in a fully optimized platform because the meaning of any data in the platform is inherently known. Moreover, when combined with the CSM and the engine, this results in a design learning platform that fully automates software systems management.
 
