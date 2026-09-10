@@ -37,6 +37,23 @@ As previous sections mentioned, the engines ability to reason about the executio
     \item It allows the engine to reason about the execution to automatically diagnose any failures and motivate the necessary root cause analysis to learn new semantics.
 \end{enumerate}
 
-Essentially, now that the constructed model and the execution have the same meaning, the engine can automatically identify where the semantics need to expand because reality will refute the designs assumptions through failures. 
+Now that the constructed model and the execution have the same meaning, the engine can automatically identify where the semantics need to expand because reality will refute the designs assumptions through failures. 
 
-However, this automation will still not be possible unless the engine actually has a complete account of the execution to diagnose the failure. In the next section, I will describe how the CSM's unambiguous nature can be leveraged to economically capture the necessary information through instrumentation and how it can be used to apply domain specific compression to the data to preserve the information at minimal cost.
+However, this automation will still not be possible unless the engine actually has a complete account of the execution to diagnose the failure. In the next section, I will talk about the information that needs to be preseved to make this possible.
+
+\subsection{Automated Instrumentation}
+
+Since the design is an unambiguous structure, it isn't necessarsy to preserve all the execution information to be able to replay it. The design itself can identify the information that can't be deterministically computed by the design. This means that the synthesized implementation can be automaticaly synthesized to only include the non-deterministic information.
+
+\begin{figure}[htbp]
+    \centering
+    \includesvg[
+        width=0.95\linewidth
+    ]{assets/csm_Instrumentation.svg}
+    \caption{Automated Instrumentation and Synthesis}
+    \label{fig:csm_instrumentation}
+\end{figure}
+
+As Figure~\ref{fig:csm_instrumentation} illustrates, the engine can use the unambiguous specification of the CSM to identify the necessary instrumentation. The information produced by the execution is then fed back into the engine where the failure is automatically diagnosed. In this way, the ways in which reality refutes the assumptions made by the design can be unambiguously identified and the learning process can be triggered.
+
+However, to truly make this an automated process, all the diagnostic data needs to be preserved at scale. Any missing data would introduce speculation, so there is a need for a solution address the practical problem while minimizing cost. In the next section, I will describe how this can be addressed by using the unambiguous domain structure of the data to apply domain specific compression.
