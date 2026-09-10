@@ -2,25 +2,6 @@ In order for the engine to reason about the execution of the design, the semanti
 
 If the implementation does realize the meaning of the design faithfully, then all the automation that is enabled by the engine reasoning about the design can be leveraged. To make this possible, the design must be established as a Computable Semantic Model (CSM) that is built from Computable Semantic Primitives (CSP).
 
-\subsection{Meaning}
-
-Before discussing how the CSM is built, I will briefly discuss how meaning is established in the closed semantic world. As part of the design, each behavior is assigned an unambiguous meaning. When a behaviors meaning is established as a composition of behaviors, it is called a composite behavior. The composite behaviors meaning is established by the semantics of the behaviors that compose it. 
-
-It is easier to demonstrate this with an example:
-\begin{itemize}
-    \item addBookToShelf
-    \begin{itemize}
-        \item getBook
-        \item getBookName
-        \item getFirstLetterOfBookName
-        \item addBookToShelf
-    \end{itemize}
-\end{itemize}
-
-In this example, the meaning of the behavior ttext{addBookToShelf} is composed by the specified behaviors. This is no different than how words work as part of human communcation, the word ttext{lion} is a compression of the meaning of a lion, this includes the apperance, sound etc. A closed semantic world unambiguously establishes the meaning. 
-
-In later sections, I will use this to explain how two semantic worlds can form a larger semantic world through semantically compatible interactions enabled by shared meaning. In this section, I will explain how a CSM is built and how a CSP enables the engine to reason about the world completely while eliminating semantic gap between the design and implementation.
-
 \subsection{Computable Semantic Model}
 A CSM is built by establishing the realization of the designs meaning. This means that the design itself is executable. 
 

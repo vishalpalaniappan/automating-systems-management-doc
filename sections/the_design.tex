@@ -1,11 +1,12 @@
 A design is a closed semantic world. It contains participants whose state is transformed through the design's unambiguous behaviors. When the environment interacts with the design, it introduces a change to the state of the world. This state transition may enable new behaviors, which the design deterministically resolves in response to the updated state, producing further state changes. When resolving a state, the design may either exhibit behavior directly or deterministically select which behaviors are enabled as a reaction to the state. The design continues reacting to each resulting state transition until no further behavior is enabled and the world reaches a stable semantic state. This chain of resolutions constitutes the structure of the design itself and provides the environment a fully specified path through it.
 
 \begin{figure}[htbp]
+    \centering
     \includesvg[
-        width=0.99\linewidth
+        width=0.9\linewidth
     ]{assets/design.svg}
     \caption{The Design}
-    \label{fig:invariant_path}
+    \label{fig:the_design}
 \end{figure}
 
 \subsection{Semantic Invalidity}
@@ -27,6 +28,22 @@ To prevent semantically invalid states from persisting in its reality, semantic 
 \subsection{Narrative of the World}
 
 Another way of describing a closed semantic world is through the narratives that are established by the design. The narratives are constructed using the behaviors and how it unambiguously modifies the state of the worlds participants. When looked at in this way, a semantically invalid path is a narrative that will not succeed in reality. When the design learns new semantics, it absorbs the awareness of the invalid narrative into its domain knowledge. Another way to say this is that the there exists a narrative in the world that is aware of the invalid narrative and it prevents any impulse from the environment from reaching it.
+
+\subsection{Meaning of the World}
+As part of the design, each behavior is assigned an unambiguous meaning. When a behaviors meaning is established as a composition of behaviors, it is called a composite behavior. The composite behaviors meaning is established by the semantics of the behaviors that compose it. Consider the following example:
+\begin{itemize}[noitemsep, topsep=1pt, label=\textbullet]
+    \item placeBookOnShelf
+    \begin{itemize}[noitemsep, topsep=1pt, label=\textbullet]
+        \item getBook
+        \item getBookName
+        \item getFirstLetterOfBookName
+        \item addBookToShelf
+    \end{itemize}
+\end{itemize}
+
+In this example, the meaning of the behavior ttext{placeBookOnShelf} is composed by the specified behaviors. This is no different than how words work as part of human communcation, the word ttext{lion} is a compression of the meaning of a lion, this includes the apperance, sound etc. A closed semantic world unambiguously establishes the meaning within this world. 
+
+When two designs interact with each other and have shared meaning, they form a larger semantic world through semantically compatible interactions. In this way, each part of a larger distributed system can be designed and assembled ino a larger world.
 
 \subsection{Reasoning about Closed Semantic World}
 
