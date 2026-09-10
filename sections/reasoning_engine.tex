@@ -4,7 +4,15 @@ To make this possible, the design must be written in a Design Abstraction Langua
 
 An engine can use the DAL script to automatically reason about the world. It can use the meaning of the design to enforce its own definition of correctness. The ability of the engine to reason about the world is limited by the meaning that has been established. Another way to frame this is to view it as meaningful questions that can be asked about the world to get an answer from the engine. If a meaningful question cannot be answered, then the meaning of the DAL must be expanded to able to answer the question.
 
-One of the powerful implications of this is that since the engine reasons about the world, it can eliminate any semantically invalid narratives from the world. This means that any failures can be automatically diagnosed because it can only mean that the design must learn new semantics. This means that the same engine can use the meaning of the constructed world to automatically diagnose the failure in the execution and identify where the semantics of the world has to expand through root cause analysis.
+\begin{figure}[htbp]
+    \includesvg[
+        width=0.99\linewidth
+    ]{assets/ideal_learning.svg}
+    \caption{Ideal learning loop by reasoning about execution using design meaning}
+    \label{fig:ideal_learning}
+\end{figure}
+
+One of the powerful implications of this is that since the engine reasons about the world, it can eliminate any semantically invalid narratives from the world. This means that using the execution of the design, the engine can reason to automatically diagnosed any failures. A failure can only mean that the design must learn new semantics. This is possible because that the same engine can use the meaning of the constructed world to automatically diagnose the failure in the execution and identify where the semantics of the world has to expand through root cause analysis.
 
 To do this, the following steps are neessary:
 \begin{itemize}
