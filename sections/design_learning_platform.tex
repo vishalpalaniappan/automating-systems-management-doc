@@ -1,6 +1,6 @@
 In this section, I will present the Design Learning Platform (DLP) and describe how it fully automates the management of software systems. Many of the ideas presented in this section have been established in earlier sections but this section brings them all together under one tool to fully automate systems management.
 
-\section{Automated Systems Management}
+\subsection{Automated Systems Management}
 
 Systems management can be described as the process of reasoning about a system or its state to take the appropriate action. In developing the computable semantic model, first, the structure that can be automatically reasoned about using an engine was established. Next, the semantic gap between the implementation and the Computable Semantic Model (CSM) was eliminated using Computable Semantic Primitives (CSP's), allowing the same engine to reason about the execution of the CSM. This enabled the engine to reason about the world, synthesize/instrument the implementation and to reason about the execution of the world. Finally, this process was enabled at scale by using Compressed Log Processor (CLP) to losslessly retain the narratives experienced by the world and to efficiently diagnose the failures from the observed narratives.
 
@@ -8,7 +8,7 @@ By establishing these capabilities, any meaningful question about the world can 
 
 The Design Learning Platform is a solution that leverages these capabilities to fully automate systems management. I will first describe a how the reasoning is applied to automated systems management in a few specific ways and then I will describe how semantic reasoning can be applied in a general way by posing the right question and establishing the necessary meaning to answer that question.
 
-\subsection{Deterministic Learning through Automated Failure Diagnosis}
+\subsubsection{Deterministic Learning through Automated Failure Diagnosis}
 
 At the core of this tool is the CSM which specifies a closed semantic world built from CSP's and is written in the Design Abstraction Language. The engine then reasons about the closed semantic world and ensures that every semantically invalid narrative is eliminated by establishing a semantically valid narrative that prevents the semantic invalidity. Then the engine tests that every semantically invalid narrative is eliminated by walking the invalid narrative path and verifying that the design selects a semantically valid narrative.
 
@@ -20,7 +20,7 @@ All of this automation is simply a result of automatically reasoning about the w
 
 In the next section, I will speak more generally about how automated reasoning can be used to manage the system.
 
-\subsection{Automated Reasoning}
+\subsubsection{Automated Reasoning}
 
 Ultimately, the processes described in the previous section are a form of automated reasoning. Invariant placement, testing, failure diagnosis are all questions that can be asked about the world that the engine can answer. In fact, this way of framing things makes this process a lot more intuitive. What other meaningful questions can be asked about the world and in what way can ambiguity be eliminated to make it possible to answer this question? 
 
@@ -28,13 +28,22 @@ Consider the question which reasons about whether the design satisfies all the r
 
 In this example, the question can be answered by the engine reasoning about the meaning of submit and access in the closed semantic world. If the design provides a mechanism to submit book named X and then access book named X, then the requirements are satisfied. This doesn't tell you if the book was actually placed on the shelf and and accessed from the same shelf. There will be another set of requirements that establish this capability and that can be verified independently. In this sense, the under specification of the requirements can actually result in the meaning of world being incompletely defined. However, this is another example of how the engine can reason about a world and answer meaningful questions about it to automatically answer it. In this case, if the engine can't answer if the requirements are met by the design, then the design needs to evolve.
 
+\begin{figure}[htbp]
+    \centering
+    \includesvg[
+        width=0.8\linewidth
+    ]{assets/reasoning_loop.svg}
+    \caption{Establish necessary meaning by answering meaningful questions through semantic reasoning.}
+    \label{fig:reasoning_loop}
+\end{figure}
+
 In this way, the questions that can be asked about the world ensure that the necessary meaning exists to be able to answer it automatically. This is a powerful idea because the meaningful questions establish the kinds of reasoning that is necessary and this in turn establishes the necessary meaning in the world. Automated management becomes establishing all the questions that you need to be able to answer about the world by reasoning about it using the engine and then establishing the meaning needed to make it happen. Eventually, there will be a set of questions which act as proof that the world has established the necessary meaning.
 
 Until now, I was talking about how the correctness of the world itself can be identified through automated reasoning. However, there are other meaningful applications of this kind of reasoning to improve the efficiency of the world. For example, the engine can automatically identify if narrative branches are redundant. This is possible because it can identify if independent branches or sequence of behaviors have no meaningful effect on the world and remove the redundancy to make the world more optimized. It establishes if every narrative in the world is necessary or if it can be simplified. These are questions that the engine can ask about the world on its own to reshape the world, similar to how it eliminates the semantically invalid narratives.
 
 I hesitate to conclude this section because there are so many more examples of how this can be applied. I particularly enjoyed the questions posed by the requirements because it exposes how semantic reasoning can be used to establish the necessary meaning in the world to make sure the design realizes its meaning. In the same way, there are many questions that can be posed, the system will be managed by asking the necessary questions that the world must be able to automatically answer and establishing the meaning necessary to answer the question.
 
-\subsection{Automated Orchestration}
+\subsubsection{Automated Orchestration}
 
 Automated orchestration falls directly from the ability to build computable semantic models which have shared meaning. When a distributed system is defined, it also defines an orchestrator that has shared meaning with the design. It is through this shared meaning that orchestration is made automated and surgical because the state of the system being managed is unambiguous by design. 
 
