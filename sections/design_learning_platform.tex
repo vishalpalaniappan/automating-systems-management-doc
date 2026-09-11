@@ -2,7 +2,7 @@ In this section, I will present the Design Learning Platform (DLP) and describe 
 
 \section{Automated Systems Management}
 
-Systems management can be described as the process of reasoning about a system to take the appropriate action. In developing the computable semantic model, first, the structure that can be automatically reasoned about using an engine was established. Next, the semantic gap between the implementation and the CSM was eliminated using Computable Semantic Primitives (CSP), allowing the same engine to reason about the execution of the Computable Semantic Model (CSM). This enabled the engine to reason about the world, synthesize/instrument the implementation and to reason about the execution of the world. Finally, this process was enabled at scale by using Compressed Log Processor (CLP) to losslessly retain the narratives experienced by the world and to efficiently diagnose the failures from the observed narratives.
+Systems management can be described as the process of reasoning about a system or its state to take the appropriate action. In developing the computable semantic model, first, the structure that can be automatically reasoned about using an engine was established. Next, the semantic gap between the implementation and the CSM was eliminated using Computable Semantic Primitives (CSP's), allowing the same engine to reason about the execution of the Computable Semantic Model (CSM). This enabled the engine to reason about the world, synthesize/instrument the implementation and to reason about the execution of the world. Finally, this process was enabled at scale by using Compressed Log Processor (CLP) to losslessly retain the narratives experienced by the world and to efficiently diagnose the failures from the observed narratives.
 
 By establishing these capabilities, any meaningful question about the world can be answered, given that the necessary meaning has been established. If it cannot be answered, the CSM provides the mechanism to eliminate the ambiguity to be able to answer the question automatically. All of the automated management steps I will describe below are a result of this lack of ambiguity and can ultimately be classified as a form of semantic reasoning. 
 
@@ -10,13 +10,21 @@ The Design Learning Platform is a solution that leverages these capabilities to 
 
 \subsection{Deterministic Learning through Automated Failure Diagnosis}
 
-At the core of this tool is the CSM which specifies a closed semantic world build from CSP's and is written in the Design Abstraction Language. The engine then reasons about this closed semantic world and enables the...coming soon.
+At the core of this tool is the CSM which specifies a closed semantic world built from CSP's and is written in the Design Abstraction Language. The engine then reasons about the closed semantic world and ensures that every semantically invalid narrative is eliminated.
+
+Then the engine tests that every semantically invalid narrative is eliminated by walking the invalid narrative path and verifying that the design selects a semantically valid narrative.
+
+Then the CSM is synthesized and instrumented to collect the necessary diagnostic data to enable replay. This results in the engine automatically diagnosing observed failures because every semantically invalid narrative exists because the design must learn new semantics to predict and resolve the failure.
+
+Then the testing same process repeats and through testing every semantically invalid narrative is eliminated and the design learns new semantics when a failure is observed. What is most interesting here is that everything I described here is a result of automatically reasoning about the world to take the correct action.
+
+\textcolor{red}{More to come.}
 
 \subsection{Automated Reasoning}
 
 Ultimately, the processes described in the previous section is a form of automated reasoning. Invariant placement, testing, failure diagnosis are all questions that can be asked about the world that the engine can answer. In fact, this way of framing things makes this process a lot more intuitive. What other meaningful questions can be asked about the world and in what way can ambiguity be eliminated to make it possible to answer this question? 
 
-More to come.
+\textcolor{red}{More to come.}
 
 \subsection{Automated Orchestration}
 
@@ -45,3 +53,6 @@ Figure~\ref{fig:automted_orchestration} shows shows a block diagram how of orche
 Figure~\ref{fig:automated_recovery_orchestration} shows a block diagram of how an orchestrator can react to a failed state and take the necessary steps to recover the system. This is once again made possible because the failed state has unambiguous meaning to the orchestrator by design. At the same time, the learning loop described in a previous section works to ensure that the failure is automatically diagnosed and a deterministic learning process prevents the recurrence of the same failure.
 
 Ultimately, this isn't anything special, it is just an extension of the closed semantic world to include the meaning which establishes the conditions needed for the design to realize its intentions. Since each part of this system will be connected together using semantically compatible interactions, the same principles that establish the correctness of a design apply here. This also means that the testing of the orchestrators response to meaningful states in the design can be automatically tested.
+
+\subsection{Design Repository}
+- Talk about how the deterministic nature of this process creates a design repository and the long term implications of being able to observe how a design evolves losslessly
