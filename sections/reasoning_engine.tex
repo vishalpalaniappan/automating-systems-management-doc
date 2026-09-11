@@ -1,0 +1,33 @@
+As the previous section established, the design is a structure that can be reasoned about through the meaning that it establishes. As such, if the design is established in a structured and unambiguous form, an engine can automatically perform the semantic reasoning. 
+
+To make this possible, the design must be written in a Design Abstraction Language (DAL). The DAL is a declarative language that is used fully establish the closed semantic world. The scope of the DAL includes all the meaning needed to fully define the world (behaviors, participants, attributes, invariants, etc).
+
+\begin{figure}[htbp]
+    \includesvg[
+        width=0.99\linewidth
+    ]{assets/reshape_design.svg}
+    \caption{Automated Reasoning to Reshape Narrative}
+    \label{fig:reshape_design}
+\end{figure}
+
+An engine can use the DAL definition to automatically reason about the world. It can use the meaning of the design to enforce its own definition of correctness. The ability of the engine to reason about the world is limited by the meaning that has been established. When the design participates in reality, a failure can be seen as a meaningful question that can't be answered by the engine.
+
+\begin{figure}[htbp]
+    \includesvg[
+        width=0.99\linewidth
+    ]{assets/ideal_learning.svg}
+    \caption{Ideal learning loop by reasoning about execution using design meaning}
+    \label{fig:ideal_learning}
+\end{figure}
+
+By reasoning about the world, the engine can eliminate any semantically invalid narratives. This means that by reasoning about the execution of the design to identify semantically invalid states, the failure can be automatically diagnosed. This is possible because that the engine can use the meaning of the constructed world to automatically diagnose the failure in the execution and identify where the semantics of the world has to expand through root cause analysis. Through this process, the engine will learn how to answer the meaningful question and eliminate the failure.
+
+To do this, the following steps are necessary:
+\begin{itemize}
+    \item The implementation and its execution must represent the design semantics faithfully.
+    \item The execution must be losslessly preserved for the reasoning to be deterministic.
+\end{itemize}
+
+If the semantic gap between the implementation and the design is eliminated and the execution is losslessly preserved, it would enable a deterministic learning loop. More importantly, as a result of this, any meaningful question about the world can be automatically answered or an automatic process would collect the necessary diagnostic information needed to learn how to answer the question.
+
+In the following sections, I will explain how a Computable Semantic Model (CSM) can be used to eliminate the semantic gap between the design and the implementation. Then I will explain how domain specific compression can be used to losslessly preserve all the narratives experienced in the world so the engine can deterministically reason about it and finally I will explain how all of this works to fully automate systems management.

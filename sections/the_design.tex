@@ -1,0 +1,81 @@
+A design is a closed semantic world. It contains participants whose state is transformed through the design's unambiguous behaviors. When the environment interacts with the design, it introduces a change to the state of the world. This state transition may enable new behaviors, which the design deterministically resolves in response to the updated state, producing further state changes. When resolving a state, the design may either exhibit behavior directly or deterministically select which behaviors are enabled as a reaction to the state. The design continues reacting to each resulting state transition until no further behavior is enabled and the world reaches a stable semantic state. This chain of resolutions constitutes the structure of the design itself and provides the environment a fully specified path through it.
+
+\begin{figure}[htbp]
+    \centering
+    \includesvg[
+        width=0.65\linewidth
+    ]{assets/design.svg}
+    \caption{The Design}
+    \label{fig:the_design}
+\end{figure}
+
+\subsection{Semantic Invalidity}
+
+The design is said to be in a semantically invalid state when one of its intentions can’t be realized as a result of that state. When the environment provides an input into this closed semantic world, in order to continue successfully realizing its intentions, the design must prevent semantically invalid states from persisting in its world.
+
+In order for the closed semantic world to participate in reality, it must be implemented on a substrate. When realized on a substrate, reality can refute the assumptions of the closed semantic word and the design fails because its intentions can't be realized. As a result, the design must learn new semantics to continue realizing its intentions. So in a closed semantic world, a failure can be understood as an assumption made by the design that reality refutes and I will be using the world failure in this context for the rest of the document. When the implementation on a substrate halts because semantic invalidity was allowed to persist, I will refer to this as a mechanical failure.
+
+\begin{figure}[htbp]
+    \centering
+    \includesvg[
+        width=0.9\linewidth
+    ]{assets/invariant_path.svg}
+    \caption{Semantically Invalid Narrative and Semantically Valid Narrative}
+    \label{fig:invariant_path}
+\end{figure}
+
+To prevent semantically invalid states from persisting in its reality, semantic invariants act as markers that identify the semantically invalid state and predict the failure of downstream behaviors. This establishes an invariant path from the semantically invalid state to the intention that can’t be realized and in order to restore semantic validity, the design must provide a semantically valid path to resolve the state.
+
+\subsection{Narrative of the World}
+
+Another way of describing a closed semantic world is through the narratives that are established by the design. The narratives are constructed using the behaviors and how it unambiguously modifies the state of the worlds participants. When looked at in this way, a semantically invalid path is a narrative that will not succeed in reality. When the design learns new semantics, it absorbs the awareness of the invalid narrative into its domain knowledge. Another way to say this is that the there exists a narrative in the world that is aware of the invalid narrative and it prevents any impulse from the environment from reaching it.
+
+\subsection{Meaning of the World}
+As part of the design, each behavior is has an unambiguous meaning, it unambiguously transforms the world state. When a behaviors meaning is established as a composition of behaviors, it is called a composite behavior. The composite behaviors meaning is established by the semantics of the behaviors that compose it. 
+
+\begin{figure}[htbp]
+    \centering
+    \includesvg[
+        width=0.45\linewidth
+    ]{assets/composite_meaning.svg}
+    \caption{Composite Behaviors}
+    \label{fig:composite_behaviors}
+\end{figure}
+
+In Figure~\ref{fig:composite_behaviors}, the meaning of the behavior placeBookOnShelf is composed by the specified behaviors and the established control flow. This is no different than how words work as part of human communication, the word lion is a compression of the meaning of a lion, this includes the appearance, sound etc. A closed semantic world unambiguously establishes the meaning within its world. Through the composition of behaviors, each level of meaning establishes a coherent world.
+
+\subsubsection{Shared Meaning}
+
+To motivate the need for shared meaning to have successful interactions, consider the following example about a library. A visitor enters the library and finds the book that they want to checkout. They walk up to the librarian with the intention to checkout the book. The librarian greets them with the intention of helping them checkout their book. The user hands them the book but the interaction halts because the librarian was expecting a library card first.
+
+In this example, the interaction failed because of a lack of shared meaning about what it means to checkout a book. Since it is two humans interacting, the librarian can clarify to the user that the correct way to checkout a book is to first provide the library card. The visitor then updates the meaning of the checkout book in their head and the interaction proceeds successfully. This example demonstrates how shared meaning is essential for the success of an interaction.
+
+\begin{figure}[htbp]
+    \centering
+    \includesvg[
+        width=0.9\linewidth
+    ]{assets/semantically_valid_interaction.svg}
+    \caption{Semantic Compatibility through Shared Meaning}
+    \label{fig:semantically_valid_interactions}
+\end{figure}
+
+This same principle applies when two designs are interacting, the success of their interaction is dependent on their ability to understand each other. When two designs interact with each other and have shared meaning, the interaction will succeed. Through shared meaning, they form a larger semantic world built through semantically compatible interactions. This process will establish the design of a distributed system assembled through semantically compatible interactions forming a larger closed semantic world with unambiguous meaning.
+
+Figure~\ref{fig:semantically_valid_interactions} demonstrates this using a distributed image compression system. For example, when the database is designed, the meaning of the database user is established. When the image compression service interacts with the database, it assumes the role of the database user, thus establishing shared meaning with the database.
+
+The next section describes how the world can be reasoned about through its computable semantic model. The same principles described are applicable to larger closed semantic worlds construed through semantically compatible interactions.
+
+\subsection{Reasoning about the World}
+
+Since the design is a closed semantic world, it is possible to reason about the world. For example, the invariants placed on a behavior can be used to reason about where to place the semantic invariants. This is possible because the narrative of the world unambiguously identifies where the participants enter a semantically invalid state and will inevitably reach the behavior. Furthermore, it is possible to identify the path that should be established to restore the semantically valid state.
+
+This form of reasoning can be used to perform many meaningful actions on the world and I will list a few below:
+\begin{itemize}
+    \item The ability to place invariants and resolve the semantically invalid states is failure prediction and resolution within the closed semantic world. 
+    \item The ability to walk down semantically invalid narrative paths and identify if the design selects a semantically valid narrative is testing the world.
+    \item If all the invariants are tested but the design still fails, the failure is automatically diagnosed because it can only mean that new semantics must be learnt.
+\end{itemize}
+
+Together, these abilities establish debugging as a process of reasoning about the world given that the designs meaning is faithfully represented by its implementation. The kinds of reasoning that are possible are only limited by the meaning established by the design.
+
+If the closed semantic world was established in an unambiguous and structured form, then an engine would be able to automatically reason about the world. In the next section, I will discuss the implications of this capability.

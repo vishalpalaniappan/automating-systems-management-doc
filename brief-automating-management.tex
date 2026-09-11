@@ -6,6 +6,8 @@
 \usepackage{graphicx}
 \usepackage{pdflscape}
 \usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{graphicx}
 \usepackage[
     top=0.5in,
     bottom=1in,
@@ -13,11 +15,60 @@
     right=1in
 ]{geometry}
 
-
-\title{Automating Software Systems Management}
-
 \begin{document}
 
-\maketitle
+\begin{titlepage}
+    \centering
+    \vspace*{\fill}
+    {\Huge\bfseries Automating the Management of Software Systems\par}
+    \vspace{6cm}
+    {\Large \textcolor{red}{WIP - DRAFT}\par}
+    \vspace*{\fill}
+\end{titlepage}
+
+\section{Introduction}
+\input{sections/introduction.tex}
+
+\section{The Design}
+\input{sections/the_design.tex}
+
+\newpage
+\section{Semantic Reasoning Engine}
+\input{sections/reasoning_engine.tex}
+
+\newpage
+\section{Computable Semantic Model}
+\input{sections/computable_semantic_model.tex}
+
+\newpage
+\section{Domain Specific Compression}
+\input{sections/domain_specific_compression.tex}
+
+\begin{landscape}
+    \begin{figure}[htbp]
+        \centering
+        \includesvg[
+            width=1\linewidth
+        ]{assets/adlp.svg}
+        \caption{The Design Learning Platform}
+        \label{fig:dlp-diagram}
+    \end{figure}
+\end{landscape}
+
+\newpage
+\section{Design Learning Platform}
+\input{sections/design_learning_platform.tex}
+
+\newpage
+\section{Additional Thoughts}
+\input{sections/additional_thoughts.tex}
+
+\newpage
+\section{Conclusion}
+\input{sections/conclusion.tex}
+
+\newpage
+\section{Extended Applications}
+\input{sections/other_applications.tex}
 
 \end{document}
