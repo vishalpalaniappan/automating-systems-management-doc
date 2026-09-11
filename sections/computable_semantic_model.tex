@@ -14,13 +14,13 @@ A CSM is built by establishing the implementation of the designs meaning enablin
     \label{fig:csm}
 \end{figure}
 
-However, there is still the possibility that the provided implementation doesn't actually realize the meaning of the design, in which case, the engine cannot reason about the world in a reliable way. Moreover, the engine can only reason about the world based on the meaning that was specified. So unless the design makes all the releveant semantics available, the engine will be unable to determine the worlds correctness. So the engine will know that there is a failure and it won't be able to explain why until it learns the missing semantics.
+However, there is still the possibility that the provided implementation doesn't actually realize the meaning of the design, in which case, the engine cannot reason about the world in a reliable way. Moreover, the engine can only reason about the world based on the meaning that was specified. So unless the design makes all the relevant semantics available, the engine will be unable to determine the worlds correctness. So the engine will know that there is a failure and it won't be able to explain why until it learns the missing semantics.
 
 In the next section, I will describe how designs built from Computable Semantic Primitives addresses both of these problems.
 
 \subsection{Computable Semantic Primitives}
 
-Computable Semantic Primitives (CSP's) are primitive computable semantic units that can be used to construct the meaning of the semantic world. Since the world is constructed from meaningful atoms that have uambiguous invariants, it can be reasoned about completely to eliminate all semantically invalid narratives. Since the primitive units can be synthesized into an implementation by definition, this transforms the DAL into a declarative language that establishes the meaning of a closed semantic world and synthesizes the meaning of that world as an implementation, effectively making the design itself executable.
+Computable Semantic Primitives (CSP's) are primitive computable semantic units that can be used to construct the meaning of the semantic world. Since the world is constructed from meaningful atoms that have unambiguous invariants, it can be reasoned about completely to eliminate all semantically invalid narratives. Since the primitive units can be synthesized into an implementation by definition, this transforms the DAL into a declarative language that establishes the meaning of a closed semantic world and synthesizes the meaning of that world as an implementation, effectively making the design itself executable.
 
 \begin{figure}[htbp]
     \centering
@@ -31,7 +31,7 @@ Computable Semantic Primitives (CSP's) are primitive computable semantic units t
     \label{fig:csp}
 \end{figure}
 
-As previous sections mentioned, the engines ability to reason about the execution of the world is dependent on there being no semantic gap between the design and the implementation. Using CSP's solves this problem elagantly in multiple ways:
+As previous sections mentioned, the engines ability to reason about the execution of the world is dependent on there being no semantic gap between the design and the implementation. Using CSP's solves this problem elegantly in multiple ways:
 \begin{enumerate}
     \item It allows the engine to fully reason about the constructed world to eliminate any semantically invalid narratives. 
     \item It allows the engine to reason about the execution to automatically diagnose any failures and motivate the necessary root cause analysis to learn new semantics.
@@ -39,11 +39,11 @@ As previous sections mentioned, the engines ability to reason about the executio
 
 Now that the constructed model and the execution have the same meaning, the engine can automatically identify where the semantics need to expand because reality will refute the designs assumptions through failures. 
 
-However, this automation will still not be possible unless the engine actually has a complete account of the execution to diagnose the failure. In the next section, I will talk about the information that needs to be preseved to make this possible.
+However, this automation will still not be possible unless the engine actually has a complete account of the execution to diagnose the failure. In the next section, I will talk about the information that needs to be preserved to make this possible.
 
 \subsection{Automated Instrumentation}
 
-Since the design is an unambiguous structure, it isn't necessarsy to preserve all the execution information to be able to replay it. The design itself can identify the information that can't be deterministically computed by the design. This means that the synthesized implementation can be automaticaly synthesized to only include the non-deterministic information.
+Since the design is an unambiguous structure, it isn't necessary to preserve all the execution information to be able to replay it. The design itself can identify the information that can't be deterministically computed by the design. This means that the synthesized implementation can be automatically synthesized to only include the non-deterministic information.
 
 \begin{figure}[htbp]
     \centering
