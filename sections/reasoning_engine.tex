@@ -15,7 +15,7 @@ When a meaningful question cannot be answered, it exposes missing meaning and in
     \label{fig:meaning_of_failures}
 \end{figure} 
 
-The word failure has historical baggage because it has often been used to reference mechanical failure experienced by the implementation of a design on a substrate (which is one possible result of semantic failure). So I want to make that distinction and clarify that the use of the word failure in this document is not to be confused with mechanical failure. It is worth highlighting this unambiguously because understanding what failures are in a semantic world is the heart of this solution and the way it frames software systems.
+The word failure has historical baggage because it has often been used to reference mechanical failure experienced by the implementation of a design on a substrate (which is one possible result of semantic failure). So I want to make that distinction and clarify that the use of the word failure in this document is not to be confused with mechanical failure. It is worth highlighting this explicitly because understanding what failures are in a semantic world is the heart of this solution and the way it frames software systems.
 
 In earlier sections, I established the conditions under which semantic invalidity exists. The persistence of the semantic invalidity can be captured through either an inability to answer a meaningful question about the world or an inability to identify the meaningful question entirely. In the following sections, I will describe how semantic invalidity is eliminated through reasoning by expanding the semantics to identify or answer meaningful questions to eliminate failures. 
 
@@ -43,6 +43,8 @@ By answering meaningful questions about the requirements, the engine reason abou
 \end{figure}
 
 This is possible because the requirements and the design share meaning. In fact, it is the requirements that establish the meaning of the world initially and this is expanded later when the design learns from reality. If the requirements are complete, then the internal consistency of the design will be verifiable. When it is not complete, as the next section describes, the requirements will be expanded to ensure internal consistency.
+
+It becomes clear that if the requirements themselves are ambiguous, then the design will inherit this ambiguity. This is where the internal consistency checks of the design will reveal gaps in necessary meaning. However, this also implies that if the requirements are specified in a structured and unambiguous way, the design itself can be automatically generated from the requirements.
 
 \subsubsection{Reasoning about Internal Consistency}
 
