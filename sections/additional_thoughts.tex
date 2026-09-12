@@ -1,5 +1,33 @@
 In this section, I will discuss some additional thoughts that I couldn't naturally add in the rest of the document but that I think are relevant to this framework.
 
+\subsection{Automated Orchestration}
+
+Automated orchestration falls directly from the ability to build computable semantic models which have shared meaning. When a distributed system is defined, it also defines an orchestrator that has shared meaning with the design. It is through this shared meaning that orchestration is made automated and surgical because the state of the system being managed is unambiguous by design. 
+
+\begin{figure}[htbp]
+    \centering
+    \includesvg[
+        width=0.75\linewidth
+    ]{assets/AutomatedManagement.svg}
+    \caption{Automated Orchestration of Distributed System}
+    \label{fig:automted_orchestration}
+\end{figure}
+
+Figure~\ref{fig:automted_orchestration} shows shows a block diagram how of orchestrator can react to an unambiguous meaningful state to take the precise response because it knows the meaning of the CSM that it is managing by design.
+
+\begin{figure}[htbp]
+    \centering
+    \includesvg[
+        width=0.75\linewidth
+    ]{assets/AutomatedManagementFailure.svg}
+    \caption{Automated Orchestration of Recovery from Mechanical Failures}
+    \label{fig:automated_recovery_orchestration}
+\end{figure}
+
+Figure~\ref{fig:automated_recovery_orchestration} shows a block diagram of how an orchestrator can react to a failed state and take the necessary steps to recover the system. This is once again made possible because the failed state has unambiguous meaning to the orchestrator by design. At the same time, the learning loop described in a previous section works to ensure that the failure is automatically diagnosed and a deterministic learning process prevents the recurrence of the same failure.
+
+Ultimately, this isn't anything special, it is just an extension of the closed semantic world to include the meaning which establishes the conditions needed for the design to realize its intentions. Since each part of this system will be connected together using semantically compatible interactions, the same principles that establish the correctness of a design apply here. This also means that the testing of the orchestrators response to meaningful states in the design can be automatically tested.
+
 \subsection{Securing Interactions}
 
 As a result of this framework, interactions between and within designs now has unambiguous meaning. There are meaningful implications for securing systems because the intention of the interaction is unambiguous. While before, the mechanical sequence had to be correct, now the design can ensure that it is the right person that is communicating with it. If the design is looked at as the brain of the software system, then this ensures that the correct brain is speaking, making it more difficult to compromise a system.
