@@ -31,43 +31,60 @@ Figure~\ref{fig:meaning_of_failures} demonstrates the general structure of how t
 
 \subsubsection{Reasoning about Requirements}
 
-By answering meaningful questions about the requirements, the engine can automatically diagnose failures and expand the meaning of the design until it satisfies all the requirements.
+By answering meaningful questions about the requirements, the engine reason about the world and identify where the meaning of the world has to expand through root cause analysis. This feedback loop converges when the meaning of the world fully satisfies the requirements.
 
 \begin{figure}[htbp]
+    \centering
     \includesvg[
-        width=0.99\linewidth
+        width=0.85\linewidth
     ]{assets/requirement_reasoning.svg}
     \caption{Reasoning to Verify Requirement Satisfaction}
     \label{fig:requirement_reasoning}
 \end{figure}
 
+This is possible because the requirements and the design share meaning. In fact, it is the requirements that establish the meaning of the world initially and this is expanded later when the design learns from reality. If the requirements are complete, then the internal consistency of the design will be verifiable. When it is not complete, as the next section describes, the requirements will be expanded to ensure internal consistency.
+
 \subsubsection{Reasoning about Internal Consistency}
 
-By reasoning about the world, the engine can eliminate any semantically invalid narratives.
+As the previous section described, through reasoning, the meaning that satisfies the specified design requirements is established. Using the establishes meaning, the engine can then reason about the internal consistency of the design. 
 
 \begin{figure}[htbp]
+    \centering
     \includesvg[
-        width=0.99\linewidth
+        width=0.95\linewidth
     ]{assets/reshape_design.svg}
     \caption{Automated Reasoning to Reshape Narrative}
     \label{fig:reshape_design}
 \end{figure}
 
+Through the meaning of the world, it is possible to identify semantically invalid narratives. For example, if a narrative gets a book from the basket but the world allows narrative to be exhibited when the basket is empty, then this will result in a failure as predicted by the invariant. This can be resolved by selecting a semantically valid narrative to prevent the invalid narrative from being selected. This process is demonstrated in a general way in Figure~\ref{fig:invariant_path}. 
+
+However, if the necessary meaning doesn't exist in the world to be able to reason about the designs internal consistency, then the failure is automatically diagnosed and the subsequent root cause analysis expands the meaning of the world. For example, if the invariant specifies that the basket size has to be at least one before you try to get a book from it, and the design doesn't know what basket size means, it will be unable to reason about it. In this way, the meaning of the world will expand until the engine can eliminate all semantically invalid narratives.
+
+While this is a simple example, it highlights a more important point that inconsistences in the constructed narratives will be identified by the reasoning. If there is no narrative that adds a book to the basket, then is the get book from basket narrative actually needed or is the behavior to add a book to the basket missing? The engine can reason about this because it recognize that the world state never modifies the basket size, so you can never get a book from the basket. 
+
+In this sense, this process will actually expand the requirements of the design until it is complete and the internal consistency can be verified.
+
 \subsubsection{Reasoning about Reality}
 
-This means that by reasoning about the execution of the design to identify semantically invalid states, the failure can be automatically diagnosed. This is possible because that the engine can use the meaning of the constructed world to automatically diagnose the failure in the execution and identify where the semantics of the world has to expand through root cause analysis. Through this process, the engine will learn how to answer the meaningful question and eliminate the failure.
+Since the design establishes its assumptions unambiguously, the engine can reason about reality to determine when the reality refutes the designs assumptions. Since it will be unable to explain why reality refuted the designs assumptions, this will result in automated failure diagnosis and the designs semantics will expand to explain why. Mechanical failures are just one way in which reality can refute the designs assumptions, any assumptions made by the design like timing requirements can also be refuted.
 
 \begin{figure}[htbp]
+    \centering
     \includesvg[
-        width=0.99\linewidth
+        width=0.85\linewidth
     ]{assets/ideal_learning.svg}
     \caption{Ideal learning loop by reasoning about execution using design meaning}
     \label{fig:ideal_learning}
 \end{figure}
 
-\subsection{Practical Considerations}
+In this process, the design learns how to function effectively in its operational environment and becomes progressively more intelligent. This happens through the acquired environmental invariants which expand the deigns awareness of its environment.
 
-To do this, the following steps are necessary:
+However, in order to practically enable this process of learning from reality, the execution of the design must be lossessly preserved so that the engine can reason about it using the model's assumptions. In the next section, I will discuss the practical issues that must be considered.
+
+\subsection{Practical Considerations for Reasoning about Reality}
+
+In order for the engine to reason about the execution to learn new semantics, the following conditions must be met:
 \begin{itemize}
     \item The implementation and its execution must represent the design semantics faithfully.
     \item The execution must be losslessly preserved for the reasoning to be deterministic.
