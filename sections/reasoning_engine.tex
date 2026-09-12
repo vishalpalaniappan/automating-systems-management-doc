@@ -10,7 +10,7 @@ When a meaningful question cannot be answered, it exposes missing meaning and in
     \centering
     \includesvg[
         width=0.85\linewidth
-    ]{assets/meaning_of_failure.svg}
+    ]{assets/reasoning_loop.svg}
     \caption{Automating Failure Diagnosis by Reasoning about World to Answer Meaningful Questions}
     \label{fig:meaning_of_failures}
 \end{figure} 
@@ -21,15 +21,17 @@ In earlier sections, I established the conditions under which semantic invalidit
 
 \subsection{Design Abstraction Language}
 
-To make this possible, the design must be written in a Design Abstraction Language (DAL). The DAL is a declarative language that is used fully establish the closed semantic world. The scope of the DAL includes all the meaning needed to fully define the world (behaviors, participants, attributes, invariants, etc).
+To make this possible, the design must be written in a Design Abstraction Language (DAL). The DAL is a declarative language that is used fully establish the closed semantic world. The scope of the DAL includes all the meaning needed to fully define the world (behaviors, participants, attributes, invariants, etc). 
 
 \subsection{Types of Reasoning}
 
-An engine can use the DAL definition to automatically reason about the world. When the engine is unable to answer a meaningful question about the world, the failure is automatically diagnosed because it identifies where the semantics have to expand through root cause analysis.
+An engine can use the DAL definition to automatically reason about the world. When the engine is unable to answer a meaningful question about the world, the failure is automatically diagnosed because it identifies where the semantics have to expand through root cause analysis. 
+
+Figure~\ref{fig:meaning_of_failures} demonstrates the general structure of how the engine can automatically reason and expand the meaning of the world by learning new semantics. In the following sections, I will demonstrate how this reasoning is applied to learn from the requirements, the design itself and reality.
 
 \subsubsection{Reasoning about Requirements}
 
-By answering meaningful questions about the requirements, the engine can automatically diagnose failures.
+By answering meaningful questions about the requirements, the engine can automatically diagnose failures and expand the meaning of the design until it satisfies all the requirements.
 
 \begin{figure}[htbp]
     \includesvg[
