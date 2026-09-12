@@ -1,10 +1,14 @@
-\textcolor{red}{Being rewritten}
-
-As the previous section established, the design is a structure that can be reasoned about through the meaning that it establishes. As such, if the design is established in a structured and unambiguous form, an engine can automatically perform the semantic reasoning. 
+As the previous section established, the design is a structure that can be reasoned about through the meaning that it establishes. As such, if the design is established in a structured and unambiguous form, an engine can automatically perform the semantic reasoning.
 
 \subsection{Meaning of Failures}
 
-- Define failure as an inability to reason about the world because of missing meaning
+Reasoning about the world is a familiar process that has always been part of the software development. This is because software systems have always been the design of a closed semantic world with unambiguous meaning. The process of reasoning about the world is extracting the meaning of that world by asking meaningful questions about it.
+
+When a meaningful question cannot be answered, it exposes missing meaning and in a closed semantic world, this is the meaning of a failure. As such, in this document, the world failure means an inability by the engine to answer a meaningful question about the world. 
+
+The word failure has historical baggage because it hsa often been used to reference mechanical failure experienced by the implementation of a design on a substrate (which is one possible result of semantic failure). So I want to make that distinction and clarify that the use of the word failure in this document is not to be confused with mechanical failure. It is worth highlighting this unambiguously because understanding what failures are in a semantic world is the heart of this solution and the way it frames software systems.
+
+In earlier sections, I established the conditions under which semantic invalidity exists. The persistence of the semantic invalidity can be captured through either an inability to answer a meaningful question about the world or an inability to identify the meaningful question entirely. In the following sections, I will describe how semantic invalidity is eliminated through reasoning by expanding the semantics to identify or answer meaningful questions to eliminate failures. 
 
 \subsection{Types of Reasoning}
 
