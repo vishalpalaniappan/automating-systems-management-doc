@@ -4,7 +4,16 @@ The design is a structure that can be reasoned about through the meaning that it
 
 Reasoning about the world is a familiar process to developers because it has always been a part of software development. This is because software systems have always been the design of a closed semantic world. The process of reasoning about the world is asking meaningful questions about it to get meaningful answers.
 
-When a meaningful question cannot be answered, it exposes missing meaning and in a closed semantic world, this is the meaning of a failure. As such, in this document, the world failure means an inability by the engine to answer a meaningful question about the world. 
+When a meaningful question cannot be answered, it exposes missing meaning and in a closed semantic world, this is the meaning of a failure. As such, in this document, the world failure means an inability by the engine to answer a meaningful question about the world.
+
+\begin{figure}[htbp]
+    \centering
+    \includesvg[
+        width=0.85\linewidth
+    ]{assets/meaning_of_failure.svg}
+    \caption{Automating Failure Diagnosis by Reasoning about World to Answer Meaningful Questions}
+    \label{fig:meaning_of_failures}
+\end{figure} 
 
 The word failure has historical baggage because it has often been used to reference mechanical failure experienced by the implementation of a design on a substrate (which is one possible result of semantic failure). So I want to make that distinction and clarify that the use of the word failure in this document is not to be confused with mechanical failure. It is worth highlighting this unambiguously because understanding what failures are in a semantic world is the heart of this solution and the way it frames software systems.
 
