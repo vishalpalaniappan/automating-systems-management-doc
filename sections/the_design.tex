@@ -46,11 +46,11 @@ The ability to construct larger closed semantic worlds through semantically comp
 
 \subsection{Narrative of the World}
 
-Another way of describing a closed semantic world is through the narratives that are established by the design. The narratives are constructed using the behaviors and how it unambiguously modifies the state of the worlds participants. An example of a narrative could be: "The librarian accepted the book from the user and added the book to the basket". This way of speaking about the design captures the meaning of the world in a form that is very intuitive. 
+Another way of describing a closed semantic world is through the narratives that are established by the design. The narratives are constructed using the behaviors and how it unambiguously modifies the state of the worlds participants. An example of a narrative could be: "The librarian accepted the book from the user and added the book to the basket". This way of speaking about the design captures the meaning of the world in a form that is very intuitive. More importantly, the meaning of the narrative is derived from the constructed world.
 
 \subsection{Semantic Invalidity}
 
-Semantic invalidity can be generally understood as incorrect or missing meaning. In this sense, the world is in a semantically invalid state when the following happens:
+Semantic invalidity can be generally understood as incorrect or missing meaning. In this sense, the world is in a semantically invalid state when one or more of the following happens:
 
 \begin{itemize}
     \item The worlds meaning does not satisfy the requirements of the design.
@@ -60,7 +60,7 @@ Semantic invalidity can be generally understood as incorrect or missing meaning.
 
 This means that the correctness of the design can be established by identifying if it eliminates the known semantically invalid conditions. The first step is to ensure that the meaning of the world is correct with respect to its requirements. This is a foundational step because it establishes the correct meaning that the rest of the process builds on.
 
-After ensuring tht the requirements are satisfied, when the environment provides an input into this closed semantic world, in order to continue successfully realizing its intentions, the design must prevent semantically invalid states from persisting in its world.
+After ensuring that the requirements are satisfied, when the environment provides an input into this closed semantic world, in order to continue successfully realizing its intentions, the design must prevent semantically invalid states from persisting in its world.
 
 To prevent semantically invalid states from persisting in its reality, semantic invariants act as markers that identify the semantically invalid state and predict the failure of downstream behaviors. This establishes an invariant path from the semantically invalid state to the intention that can’t be realized and in order to restore semantic validity, the design must provide a semantically valid path to resolve the state.
 
