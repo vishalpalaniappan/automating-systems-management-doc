@@ -1,0 +1,67 @@
+The design is a structure that can be reasoned about through the meaning that it establishes. In this context, reasoning means to ask meaningful questions about it to extract a meaningful answer. As such, if the design is established in a structured and unambiguous form, an engine can automatically reason about the world.
+
+\subsection{Meaning of Failures}
+
+Reasoning about the world is a familiar process to developers because it has always been a part of software development. This is because software systems have always been the design of a closed semantic world. The process of reasoning about the world is asking meaningful questions about it to get meaningful answers.
+
+When a meaningful question cannot be answered, it exposes missing meaning and in a closed semantic world, this is the meaning of a failure. As such, in this document, the world failure means an inability by the engine to answer a meaningful question about the world. 
+
+The word failure has historical baggage because it has often been used to reference mechanical failure experienced by the implementation of a design on a substrate (which is one possible result of semantic failure). So I want to make that distinction and clarify that the use of the word failure in this document is not to be confused with mechanical failure. It is worth highlighting this unambiguously because understanding what failures are in a semantic world is the heart of this solution and the way it frames software systems.
+
+In earlier sections, I established the conditions under which semantic invalidity exists. The persistence of the semantic invalidity can be captured through either an inability to answer a meaningful question about the world or an inability to identify the meaningful question entirely. In the following sections, I will describe how semantic invalidity is eliminated through reasoning by expanding the semantics to identify or answer meaningful questions to eliminate failures. 
+
+\subsection{Design Abstraction Language}
+
+To make this possible, the design must be written in a Design Abstraction Language (DAL). The DAL is a declarative language that is used fully establish the closed semantic world. The scope of the DAL includes all the meaning needed to fully define the world (behaviors, participants, attributes, invariants, etc).
+
+\subsection{Types of Reasoning}
+
+An engine can use the DAL definition to automatically reason about the world. When the engine is unable to answer a meaningful question about the world, the failure is automatically diagnosed because it identifies where the semantics have to expand through root cause analysis.
+
+\subsubsection{Reasoning about Requirements}
+
+By answering meaningful questions about the requirements, the engine can automatically diagnose failures.
+
+\begin{figure}[htbp]
+    \includesvg[
+        width=0.99\linewidth
+    ]{assets/requirement_reasoning.svg}
+    \caption{Reasoning to Verify Requirement Satisfaction}
+    \label{fig:requirement_reasoning}
+\end{figure}
+
+\subsubsection{Reasoning about Internal Consistency}
+
+By reasoning about the world, the engine can eliminate any semantically invalid narratives.
+
+\begin{figure}[htbp]
+    \includesvg[
+        width=0.99\linewidth
+    ]{assets/reshape_design.svg}
+    \caption{Automated Reasoning to Reshape Narrative}
+    \label{fig:reshape_design}
+\end{figure}
+
+\subsubsection{Reasoning about Reality}
+
+This means that by reasoning about the execution of the design to identify semantically invalid states, the failure can be automatically diagnosed. This is possible because that the engine can use the meaning of the constructed world to automatically diagnose the failure in the execution and identify where the semantics of the world has to expand through root cause analysis. Through this process, the engine will learn how to answer the meaningful question and eliminate the failure.
+
+\begin{figure}[htbp]
+    \includesvg[
+        width=0.99\linewidth
+    ]{assets/ideal_learning.svg}
+    \caption{Ideal learning loop by reasoning about execution using design meaning}
+    \label{fig:ideal_learning}
+\end{figure}
+
+\subsection{Practical Considerations}
+
+To do this, the following steps are necessary:
+\begin{itemize}
+    \item The implementation and its execution must represent the design semantics faithfully.
+    \item The execution must be losslessly preserved for the reasoning to be deterministic.
+\end{itemize}
+
+If the semantic gap between the implementation and the design is eliminated and the execution is losslessly preserved, it would enable a deterministic learning loop. More importantly, as a result of this, any meaningful question about the world can be automatically answered or an automatic process would collect the necessary diagnostic information needed to learn how to answer the question.
+
+In the following sections, I will explain how a Computable Semantic Model (CSM) can be used to eliminate the semantic gap between the design and the implementation. Then I will explain how domain specific compression can be used to losslessly preserve all the narratives experienced in the world so the engine can deterministically reason about it and finally I will explain how all of this works to fully automate systems management.
