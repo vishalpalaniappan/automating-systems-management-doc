@@ -22,7 +22,17 @@ An engine can use the DAL definition to automatically reason about the world. Wh
 
 By answering meaningful questions about the requirements, the engine can automatically diagnose failures.
 
+\begin{figure}[htbp]
+    \includesvg[
+        width=0.99\linewidth
+    ]{assets/requirement_reasoning.svg}
+    \caption{Reasoning to Verify Requirement Satisfaction}
+    \label{fig:requirement_reasoning}
+\end{figure}
+
 \subsubsection{Reasoning about Internal Consistency}
+
+By reasoning about the world, the engine can eliminate any semantically invalid narratives.
 
 \begin{figure}[htbp]
     \includesvg[
@@ -32,9 +42,9 @@ By answering meaningful questions about the requirements, the engine can automat
     \label{fig:reshape_design}
 \end{figure}
 
-By reasoning about the world, the engine can eliminate any semantically invalid narratives.
-
 \subsubsection{Reasoning about Reality}
+
+This means that by reasoning about the execution of the design to identify semantically invalid states, the failure can be automatically diagnosed. This is possible because that the engine can use the meaning of the constructed world to automatically diagnose the failure in the execution and identify where the semantics of the world has to expand through root cause analysis. Through this process, the engine will learn how to answer the meaningful question and eliminate the failure.
 
 \begin{figure}[htbp]
     \includesvg[
@@ -43,8 +53,6 @@ By reasoning about the world, the engine can eliminate any semantically invalid 
     \caption{Ideal learning loop by reasoning about execution using design meaning}
     \label{fig:ideal_learning}
 \end{figure}
-
-This means that by reasoning about the execution of the design to identify semantically invalid states, the failure can be automatically diagnosed. This is possible because that the engine can use the meaning of the constructed world to automatically diagnose the failure in the execution and identify where the semantics of the world has to expand through root cause analysis. Through this process, the engine will learn how to answer the meaningful question and eliminate the failure.
 
 \subsection{Practical Considerations}
 
