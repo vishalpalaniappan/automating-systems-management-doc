@@ -10,7 +10,9 @@ When reality refutes the assumptions made by the design, new semantics are learn
 
 Ultimately, this automates the management of software systems because the automated reasoning constructs a world that has already been managed by construction. The necessary questions about the world have been asked and answered by the engine until the world is internally consistent and its meaning is correct. When the system still fails, an automated process provides the necessary information to support root cause analysis to learn new semantics.
 
-Practically, building the design itself becomes a process of world building from requirements where the feed back from the engines automated reasoning refines the requirements until the world is internally consistent and has the correct meaning.
+Practically, building the design itself becomes a process of world building from requirements where the feedback from the engines automated reasoning refines the requirements until the world is internally consistent and has the correct meaning. This will result in a series of questions that must be answerable by the engine to establish that the meaning of the world is correct and is internally consistent. If the meaning of the world is correct with respect to its requirements and it is internally consistent, then there are no more known questions that have to be asked with respect to managing the system. When the system fails, the framework learns a new question that the engine must be able to answer and gains the meaning needed to be able to answer it.
+
+If the requirements specify a design that doesn't actually establish the world that serves the purpose of the design, then there is no way for the engine to know if its meaning is correct. However, it is evident from this structure that the automated reasoning is only limited by the meaning that has been established. So you can keep moving up the hierarchy and establish whether the requirements describe a world that serves the purpose of the design. Then the entire world will be reasoned about from the purpose down to the implementation while ensuring its correctness.
 
 \subsection{Design Repository}
 
