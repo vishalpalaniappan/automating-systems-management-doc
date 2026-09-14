@@ -7,7 +7,7 @@ Automated orchestration falls directly from the ability to build computable sema
 \begin{figure}[htbp]
     \centering
     \includesvg[
-        width=0.75\linewidth
+        width=0.70\linewidth
     ]{assets/AutomatedManagement.svg}
     \caption{Automated Orchestration of Distributed System}
     \label{fig:automted_orchestration}
@@ -18,7 +18,7 @@ Figure~\ref{fig:automted_orchestration} shows shows a block diagram how of orche
 \begin{figure}[htbp]
     \centering
     \includesvg[
-        width=0.75\linewidth
+        width=0.70\linewidth
     ]{assets/AutomatedManagementFailure.svg}
     \caption{Automated Orchestration of Recovery from Mechanical Failures}
     \label{fig:automated_recovery_orchestration}
@@ -26,7 +26,7 @@ Figure~\ref{fig:automted_orchestration} shows shows a block diagram how of orche
 
 Figure~\ref{fig:automated_recovery_orchestration} shows a block diagram of how an orchestrator can react to a failed state and take the necessary steps to recover the system. This is once again made possible because the failed state has unambiguous meaning to the orchestrator by design. At the same time, the learning loop described in a previous section works to ensure that the failure is automatically diagnosed and a deterministic learning process prevents the recurrence of the same failure.
 
-Ultimately, this isn't anything special, it is just an extension of the closed semantic world to include the meaning which establishes the conditions needed for the design to realize its intentions. Since each part of this system will be connected together using semantically compatible interactions, the same principles that establish the correctness of a design apply here. This also means that the testing of the orchestrators response to meaningful states in the design can be automatically tested.
+Ultimately, this isn't anything special, it is just an extension of the closed semantic world to include the meaning which establishes the conditions needed for the design to realize its intentions. Through semantically compatible interactions, the same principles that establish the correctness of a design apply here. This also means that the testing of the orchestrators response to meaningful states in the design can be automated.
 
 \subsection{Securing Interactions}
 
