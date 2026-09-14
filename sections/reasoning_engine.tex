@@ -21,19 +21,21 @@ In earlier sections, I established the conditions under which semantic invalidit
 
 \subsection{Design Abstraction Language}
 
-To make this possible, the design must be written in a Design Abstraction Language (DAL). The DAL is a declarative language that is used fully establish the closed semantic world. The scope of the DAL includes all the meaning needed to fully define the world (behaviors, participants, attributes, invariants, etc). 
+To make the reasoning possible, the design must be defined in a Design Abstraction Language (DAL). The DAL is a declarative language that is used fully establish the closed semantic world. The scope of the DAL includes all the meaning needed to fully define the world (behaviors, transitions, participants, attributes, invariants, etc). 
 
-Later in the document, I will describe a semantic toolkit that can be used establish the meaning of a world. This meaning is automatically translated into a closed semantic world written in the Design Abstraction Language (DAL) and the engine reasons about the world using the structure until the meaning is correct. The established meaning can then be added to the semantic toolkit and used to establish more meaning.
+Later in the document, I will describe a semantic toolkit that can be used establish the meaning of a world. This meaning is automatically translated into a closed semantic world defined in the Design Abstraction Language (DAL) and the engine reasons about the world using the structure until the meaning is correct. The established meaning can then be added to the semantic toolkit and the process repeats.
 
 \subsection{Types of Reasoning}
 
 An engine can use the DAL definition to automatically reason about the world. When the engine is unable to answer a meaningful question about the world, the failure is automatically diagnosed because it identifies where the semantics have to expand through root cause analysis. 
 
-Figure~\ref{fig:meaning_of_failures} demonstrates the general structure of how the engine can automatically reason and expand the meaning of the world by learning new semantics. In the following sections, I will demonstrate how this reasoning is applied to learn from the requirements, the design itself and reality.
+Figure~\ref{fig:meaning_of_failures} demonstrates the general structure of how the engine can automatically reason and expand the meaning of the world by learning new semantics. In the following sections, I will demonstrate how this reasoning is applied to learn from the requirements, the design own meaning and reality.
 
 \subsubsection{Reasoning about Requirements}
 
-By answering meaningful questions about the requirements, the engine reason about the world and identify where the meaning of the world has to expand through root cause analysis. This feedback loop converges when the meaning of the world fully satisfies the requirements.
+\textcolor{red}{Update to explain how semkit eliminates need to reason about requirements because it eliminates ambiguity.}
+
+By answering meaningful questions about the requirements, the engine can reason about the world and identify where the meaning of the world has to expand through root cause analysis. This feedback loop converges when the meaning of the world fully satisfies the requirements.
 
 \begin{figure}[htbp]
     \centering
@@ -48,7 +50,7 @@ This is possible because the requirements and the design share meaning. In fact,
 
 It becomes clear that if the requirements themselves are ambiguous, then the design will inherit this ambiguity. This is where the internal consistency checks of the design will reveal gaps in necessary meaning. However, this also implies that if the requirements are specified in a structured and unambiguous way, the design itself can be automatically generated from the requirements.
 
-In this process, building the design itself becomes a kind of automated reasoning process, where the requirements are synthesized into an implementation and the engine identifies the missing meaning that prevents internal consistency. Through this feedback loop, the requirements keep getting refined until the design is internally consistent.
+In this process, building the design itself becomes an automated reasoning process, where the requirements are synthesized into an implementation and the engine identifies the missing meaning that prevents internal consistency. Through this feedback loop, the requirements keep getting refined until the design is internally consistent.
 
 \subsubsection{Reasoning about Internal Consistency}
 
