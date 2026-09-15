@@ -21,7 +21,7 @@ In earlier sections, I established the conditions under which semantic invalidit
 
 \subsection{Design Abstraction Language}
 
-To make the reasoning possible, the design must be defined in a Design Abstraction Language (DAL). The DAL is a declarative language that is used fully establish the closed semantic world. The scope of the DAL includes all the meaning needed to fully define the world (behaviors, transitions, participants, attributes, invariants, etc). 
+To make the reasoning possible, the design must be defined in a Design Abstraction Language (DAL). The DAL is a declarative language that is used fully establish the closed semantic world. The scope of the DAL includes all the meaning needed to fully define the world (behaviors, transitions, participants, invariants, etc). 
 
 Later in the document, I will describe a semantic toolkit that can be used establish the meaning of a world. This meaning is automatically translated into a closed semantic world defined in the Design Abstraction Language (DAL) and the engine reasons about the world using the structure until the meaning is correct. The established meaning can then be added to the semantic toolkit and the process repeats.
 
@@ -48,7 +48,7 @@ This is possible because the requirements and the design share meaning. If the m
 
 However, this also implies that if the requirements are specified in a structured and unambiguous way, the design can be automatically generated from the requirements. When the completeness of the requirements converges on its limit, it becomes the meaning of the design itself. This will eliminate the need to reason about the requirements to establish the necessary meaning in the world because the meaning itself will be specified and used to construct the world.
 
-In this process, building the design itself becomes an automated reasoning process, where the meaning is used to automatically construct the world and the engine identifies the missing meaning that prevents internal consistency. Through this feedback loop, the meaning keep getting refined until the design is internally consistent. Through this process, the development of software systems becomes automated because the meaning is automatically realized as an implementation.
+In this process, building the design itself becomes an automated reasoning process, where the meaning is used to automatically construct the world and the engine identifies the missing meaning that prevents internal consistency.Through this process, the development of software systems becomes automated because the meaning is automatically realized as an implementation.
 
 \subsubsection{Reasoning about Internal Consistency}
 
