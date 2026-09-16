@@ -1,3 +1,6 @@
+# LaTeX Folders to ignore
+svg-inkscape
+
 # LaTeX temporary/build files
 *.aux
 *.log
