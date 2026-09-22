@@ -1,6 +1,6 @@
 Now that I have established how software systems can be automatically constructed from meaning using a semantic toolkit, in this section, I will talk about how this drives the future of debugging. 
 
-In section \ref{subsec:shared-meaning}, I discussed how shared meaning leads to successful interactions between designs and how that can be used to construct a distributed system. In that example, I highlighted how the shared meaning at the boundary of communication between the systems leading to successful interactions. This section expands the principle to apply it more generally.
+In section \ref{subsec:shared-meaning}, I discussed how shared meaning leads to successful interactions between designs and how that can be used to construct a distributed system by leveraging semantically compatible interactions. In this section I will move beyond just the boundary between designs and apply that principle more generally and present the implications of semantic compatibility between all parts of a system.
 
 When two humans are unable to communicate effectively to achieve their intentions, the root cause of failure can be identified as an incompatibility in meaning. If an apple means something different to me than it does to another human, there will be a misunderstanding in our communication about apples. If I ask for an apple and they give me a pencil, then there is a failure. If you were to debug the human interaction, the misalignment in meaning will predict the failure and an agreement on the meaning will resolve the failure.
 
@@ -13,7 +13,7 @@ This is much more precise than human communication. In human communication, the 
 \begin{figure}[htbp]
     \centering
     \includesvg[
-        width=0.90\linewidth
+        width=0.95\linewidth
     ]{assets/future_debugging.svg}
     \caption{Eliminating bugs within and between systems using semantic toolkit}
     \label{fig:future_debugging}
