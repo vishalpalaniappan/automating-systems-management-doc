@@ -113,17 +113,24 @@ I think this is the best place to start because it introduces how meaning is est
         },
         {
             type: "fail_id_1",
-            sentence: f"Failed to add the two numbers because addend1 was not a float or int.",
+            sentence: f"Failed addition because addend1 was not a float or int.",
         },
         {
             type: "fail_id_2",
-            sentence: f"Failed to add the two numbers because addend2 was not a float or int.",
+            sentence: f"Failed addition because addend2 was not a float or int.",
         }
     }
 \end{minted}
 
+Realization of meaning of transformation add:
 \begin{minted}[linenos, frame=lines, mathescape, breaklines=true]{python}
 def add(addend1, addend2):
     return addend1 + addend2
+\end{minted}
+
+Realization of attribute type:
+\begin{minted}[linenos, frame=lines, mathescape, breaklines=true]{python}
+def getType(value):
+    return type(value).__name__
 \end{minted}
 
