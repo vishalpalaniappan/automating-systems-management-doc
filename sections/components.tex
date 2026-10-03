@@ -24,42 +24,4 @@ The meaning can also tell you more about the data (ex. how it changes) so that i
 
 Next, I will discuss how each component can be practically implemented.
 
-\subsection{Design Abstraction Language}
-
-The Design Abstraction Language (DAL) itself is just a structure that can be used to construct the meaning of a design. I've written a basic AST library that can be used to establish blocks and commands with arguments, this is sufficient for now. Its the structures that are built with this that define the meaning. 
-
-\subsection{Computable Semantic Primitives}
-
-I think this is the best place to start because it introduces how meaning is established with the DAL while also introducing the first entries into the semantic toolkit that can be used to construct narratives. So next, I will present the CSP for add and then I will discuss each part of it.
-
-\input{sections/csp_add.tex}
-
-TODO: Explain the components of the CSP
-\begin{itemize}[nosep]
-    \item narrative\_syntax
-    \item participants
-    \item result
-    \item behavior
-    \item invariants
-    \item realization
-\end{itemize}
-
-\subsection{Narrative}
-
-In this section, I will build intuition for the role that each component plays by speaking generally about narratives using semantics used by humans in english. I will use it to demonstrate how the narrative can be constructed in a structured form and how that meaning can be used to construct more meaning. Then I will demonstrate how the meaning of narratives can be reasoned about to identify if it is internally consistent or if it has incorrect or missing meaning. Then I will discuss how the components work toward the same goal for software systems. 
-
-Consider the following narrative:
-
-\begin{greyquote}
-The librarian presents the user with the option to add a book or get a book from the library.\\
-
-If the user selects the option to add a book, the librarian accepts a book by asking the user for the name and content. Then the librarian reads the first letter of the books name to place the book on the relevant shelf. Then the user is once again asked which action they want to take.\\
-
-If the user selects the option to get a book, the librarian asks the user for the book name. The librarian reads the first letter of the book name and accesses the book from the relevant shelf. After the librarian provides the user the book, the user is once again asked which action they want to take.
-\end{greyquote}
-
-
-
-
-
 
