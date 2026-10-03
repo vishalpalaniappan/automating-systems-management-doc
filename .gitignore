@@ -1,3 +1,7 @@
+# LaTeX Folders to ignore
+svg-inkscape
+_minted-dlp-practical*
+
 # LaTeX temporary/build files
 *.aux
 *.log
