@@ -8,9 +8,10 @@
 
     narrative_structure {
         # Example: store result of add cost_of_bagel and cost_of_coffee in total_cost
-        {
-            syntax: "store result of add {addend1} and {addend2} in {resultName}"
-        }
+        narrative_syntax(f"store result of add {addend1} and {addend2} in {resultName}")
+        success_narrative(f"Added {addend1} to {addend2} and resulted in {result}.")
+        fail_inv_id_1(f"Failed to add the two numbers because addend1 was not a float or int.")
+        fail_inv_id_2(f"Failed to add the two numbers because addend2 was not a float or int.")
     }
 
     participants {
@@ -50,7 +51,7 @@
         assert({
             id:1,
             participants: ["addend1"],
-            property: ["type"]
+            property: "type"
             condition: "float" || "int"
             description: "Addend1 must be a whole number or float.",
             invalidValues: [
@@ -63,7 +64,7 @@
         assert({
             id:2,
             participants: ["addend2"],
-            property: ["type"]
+            property: "type"
             condition: "float" || "int"
             description: "Addend2 must be a whole number or float.",
             invalidValues: [
@@ -74,6 +75,7 @@
             ]
         })
     }
+}
 \end{minted}
 
 \subsubsection*{Realization of meaning of transformation Add}
