@@ -29,9 +29,9 @@
 
     behavior add {
         # Get the addends from the world state
-        getFromWorldState(name="addend1", role="addend1")
-        getFromWorldState(name="addend2", role="addend2")
-        getFromWorldState(name="resultName", role="resultName")
+        getFromWorldState(name=addend1, role="addend1")
+        getFromWorldState(name=addend2, role="addend2")
+        getFromWorldState(name=resultName, role="resultName")
 
         # adds the two values and store result in the value of resultName 
         _add(result, addend1, addend2)
