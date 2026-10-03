@@ -34,13 +34,12 @@
         getFromWorldState(name="resultName", role="resultName")
 
         # adds the two values and store result in the value of resultName 
-        _adds(result, addend1, addend2)
+        _add(result, addend1, addend2)
 
         # Update the world state
         updateWorldState(
             name=resultName,
-            value=result,
-            type="float" or "int"
+            value=result
         )
     }
 
@@ -74,21 +73,6 @@
                 }
             ]
         })
-    }
-
-    generate{
-        {
-            type: "success",
-            sentence: f"Added {addend1} to {addend2} and resulted in {result}.",
-        },
-        {
-            type: "fail_id_1",
-            sentence: f"Failed addition because addend1 was not a float or int.",
-        },
-        {
-            type: "fail_id_2",
-            sentence: f"Failed addition because addend2 was not a float or int.",
-        }
     }
 \end{minted}
 
