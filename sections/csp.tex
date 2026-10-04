@@ -3,22 +3,22 @@ I think this is the best place to start because it introduces how meaning is est
 
 \input{sections/csp_add.tex}
 
-TODO: Explain the components of the CSP
-\begin{itemize}[nosep]
-    \item narrative\_syntax
-    \item participants
-    \item result
-    \item behavior
-    \item invariants
-    \item realization
-\end{itemize}
-
-\subsubsection{Narrative Syntax}
-
-\subsubsection{Participants}
-
-\subsubsection{Result}
 
 \subsubsection{Transformation and Realization}
 
-\subsubsection{Invariants}
+{\color{red}WIP}
+
+Given the necessary participants, the CSP itself is a meaningful transformation that results in an unambiguous world state after the transformation. The meaning of that transformation is established by the CSP but the realization of that transformation is established in the implementation that is invoked. 
+
+This is an important point to highlight because it is this property that enables the meaning of the world to be synthesized directly into an implementation. While before the programming language would be used to implement the intended meaning of the system, now the meaning is used to automatically synthesize the implementation because the meaning is made computable through the CSP's.
+
+Now, "add" is now part of the semantic toolkit and it can be used to construct more meaning by using it in narratives. When the CSM is constructed from the artha script, the add transformation will be a transformation in the world and it will get synthesized using the provided implementation.
+
+Since the meaning of add includes the invariants which establish its correctness, the engine can reason about the narratives to establish the conditions under which this transformation will succeed. This is a direct result of establishing the meaning of the transformation and reasoning about it using its context in the narratives of the design.
+
+As part of the invariant definition, specific attributes of the participant are bounded to certain values. For example, the participants in the add transformation are expected to have a type attribute and the realization of that attribute is invoked through the implementation. In this sense, the meaning of that attribute can be used to reason about whether the transformation will succeed. 
+
+
+\subsubsection{Narrative Syntax}
+
+The narrative syntax is how the transformation can be used in an Artha script. The script itself is tokenized and using the syntax established for each primitive it can be parsed. The parsed syntax is also used to enforce the invariants because it establishes the meaning of the participants in this transformation.
