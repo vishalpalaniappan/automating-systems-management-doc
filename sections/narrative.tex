@@ -49,7 +49,7 @@ To further discuss reasoning about the meaning of this world, I will use a diagr
 \begin{figure}[htbp]
     \centering
     \includesvg[
-        width=0.65\linewidth
+        width=0.85\linewidth
     ]{assets/library_manager_diagram.svg}
     \caption{Library Manager Diagram}
     \label{fig:library_manager_diagram}
@@ -59,5 +59,7 @@ TODO: Speak about reasoning here and discuss how the book name has to have a fir
 
 \subsubsection{Meaning of Software System}
 
-Unlike humans communication which has many factors that influence it, in the world of software systems, meaning can be made entirely unambiguous by construction. The design of a software system is a closed semantic world and the meaning of that world can be made entirely unambiguous and computable by constructing the meaning from computable semantic primitives. This allows an engine to reason about the world and diagnose failures in the construction of the world that are a result of missing or incorrect meaning.
+Unlike humans communication which has many factors that influence it, in the world of software systems, meaning can be made entirely unambiguous by construction. The design of a software system is a closed semantic world and the meaning of that world can be made entirely unambiguous and computable by constructing the meaning from computable semantic primitives. This allows an engine to completely reason about the world and diagnose failures in the construction of the world that are a result of missing or incorrect meaning.
+
+In the next section, I will discuss how the computable semantic primitives are defined and how they establish the atomic meaning of the world. After that, I will discuss how Artha uses the semantic toolkit to establish narratives and how the world is automatically constructed using the design abstraction language. Finally, I will discuss how the engine reasons about the meaning of the world using the structure.
 
