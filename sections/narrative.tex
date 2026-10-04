@@ -42,4 +42,18 @@ I think this exercise is helpful because it helps build the relationship between
 
 This can only be answered by reasoning about the meaning of the book, shelf and the action of adding a book to the shelf. For example, if the shelf has slots of a certain size and the book is larger than the size of the slot, then the intention will fail. By reasoning about the world, the narratives can be modified so that the intentions will succeed by preventing narratives that are semantically invalid. It can also be seen that if two narratives are interacting, the success of that interaction is dependent on shared meaning. Without that shared meaning it will be impossible to reason about whether the interaction will succeed.
 
+To further discuss reasoning about the meaning of this world, I will use a diagram of the narrative by representing the narrative as behaviors of a closed semantic world, which can also be referred to as a design. Here a behavior is a semantic unit that transforms the world state in an unambiguous way. So the narrative can also be described as the behavior of the design.
+
+\begin{figure}[htbp]
+    \centering
+    \includesvg[
+        width=0.65\linewidth
+    ]{assets/library_manager_diagram.svg}
+    \caption{Library Manager Diagram}
+    \label{fig:library_manager_diagram}
+\end{figure}
+
+TODO: Speak about reasoning here and discuss how the book name has to have a first letter.
+
 Unlike humans communication which has many factors that influence it, in the world of software systems, meaning can be made entirely unambiguous by construction. The design of a software system is a closed semantic world and the meaning of that world can be made entirely unambiguous and computable by constructing the meaning from computable semantic primitives. This allows an engine to reason about the world and diagnose failures in the construction of the world that are a result of missing or incorrect meaning.
+
