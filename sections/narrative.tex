@@ -17,8 +17,8 @@ Consider the following narrative and participants in the narrative. In this case
 \begin{greyquote}
     The librarian can present the user with a menu. \\
     The librarian executes the users choice.\\
-    The librarian adds a book to the library.\\
-    The librarian gets a book from the library.
+    The librarian adds a book to the shelf.\\
+    The librarian gets a book from the shelf.
 \end{greyquote}
 
 \subsubsection*{Menu}
@@ -49,13 +49,17 @@ To further discuss reasoning about the meaning of this world, I will use a diagr
 \begin{figure}[htbp]
     \centering
     \includesvg[
-        width=0.85\linewidth
+        width=0.86\linewidth
     ]{assets/library_manager_diagram.svg}
     \caption{Library Manager Diagram}
     \label{fig:library_manager_diagram}
 \end{figure}
 
-TODO: Speak about reasoning here and discuss how the book name has to have a first letter.
+Using the structure of the design, we can reason about its meaning. First, it is evident from the design that the narratives establish the designs intentions. A design is said to be internally inconsistent if it makes assumptions that contradict its own meaning. As a result of this contradiction, it will be unable to realize its intentions because it permits conditions that make realizing its intentions not possible. For example, in this design, there is a behavior in which the first letter of the books name is accessed. However, the design accepts a book with no letters in its name with the intention of using the first letter of the book name.
+
+When a book with no letters in its name is accepted, the design is said to be in a semantically invalid state because one of its downstream behaviors will not be realizable. In order for it to realize its intentions, it must modify its behavior to not accept books with no letters in its name. Through this proces, it can be said that the predicted failure is resolved by preventing the semantic invalidity from persisting. This process of identifying the failure can be described as reasoning about the meaning of world. 
+
+More to come.
 
 \subsubsection{Meaning of Software System}
 
