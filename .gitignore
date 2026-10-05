@@ -1,6 +1,7 @@
 # LaTeX Folders to ignore
 svg-inkscape
 _minted-dlp-practical*
+_minted
 
 # LaTeX temporary/build files
 *.aux
