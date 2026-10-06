@@ -5,12 +5,60 @@ In an earlier section, using the english language, I demonstrated how narratives
 
 \subsection{Functional Syntax}
 
-In this section, I will begin introducing the functional syntax that must be used to construct the narratives. I will then use these along with the CSP's to construct narratives, build the CSM and then synthesize it.
+In this section, I will begin introducing the functional syntax that must be used to construct the narratives. In this section, I will introduce the if, then and while functional units using the example below.
+
+\begin{greyquote}
+\textbf{while} basket has books get a book from basket \textbf{then} \textbf{if} book name equals "harry potter" add book to the shelf
+\end{greyquote}
+
+The sudo code of how it will be parsed is presented below:
+
+\begin{minted}[linenos, frame=lines, mathescape]{python}
+while (basket has books) {
+    get a book from the basket
+    if (book name equals "harry potter") {
+        add book to the shelf
+    }
+}
+\end{minted}
+
+The DAL representation would be as show below, engine will reason about this:
+
+\begin{minted}[linenos, frame=lines, mathescape]{python}
+    behavior basketHasBooks {
+        hasBooks = basketHasBooks(basket)
+        if (hasBooks){
+            goToBehavior("invoke_getBookFromBasket")
+        }
+    }
+
+    behavior invoke_getBookFromBasket {
+        book = getBookFromBasket()
+        if (book.name === "harry potter") {
+            goToBehavior("invoke_addBookToShelf")
+        }
+    }
+
+    behavior invoke_addBookToShelf {
+        addBookToShelf(shelf, book)
+        goToBehavior("basketHasBooks")
+    }
+\end{minted}
+
+Synthesized Implementation (in python):
+\begin{minted}[linenos, frame=lines, mathescape]{python}
+    while (basketHasBooks()):
+        book = getBookFromBasket()
+        if (book["name"] == "harry potter"):
+            addBookToShelf(book)
+        
+    
+\end{minted}
+
 
 \subsubsection{If}
 
 \subsubsection{Then}
 
 \subsubsection{While}
-
 
