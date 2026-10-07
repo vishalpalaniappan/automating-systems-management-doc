@@ -1,0 +1,80 @@
+In this section, I will introduce the meaningful programming language called Artha. I already established how the computable semantic primitives are built using the DAL and how the meaning established by those primitives is part of the semantic toolkit. Now, I will discuss how I can build narratives from those primitives to create more meaning. 
+
+In an earlier section, using the english language, I demonstrated how narratives can be constructed by combining meaning and functional words. Here, I transition to the world of software systems and establish the language needed to construct narratives from computable meaning. I will demonstrate how that narrative's structure can be constructed using the DAL and in the next section, I will describe how an engine can be used to reason about it.
+
+\subsubsection{Primitive Syntax and Constructed}
+
+The CSP's define the syntax that can be used in the Artha script. These can be used in conjunction with the functional syntax to create constructed syntax. Then the primitive, functional and constructed syntax can be used together to more meaning and establish more constructed syntax.
+
+\subsubsection*{add the bill}
+\begin{greyquote}
+    Initialize bill\_sum to 0. bill\_sum is of type float.\\
+
+    For each participant in group add participant\_bill and bill\_sum.
+\end{greyquote}
+
+In this example, the constructed syntax \textbf{add the bill} is constructed by establishing the narrative that it represents. Now add the bill can be used in another narrative.
+
+\begin{greyquote}
+    If diners request the bill then add the bill then hand bill to diners.
+\end{greyquote}
+
+\subsubsection{Functional Syntax}
+
+In this section, I will begin introducing the functional syntax that must be used to construct the narratives. Using the example below, I will introduce the if, then and while functional units.
+
+\begin{greyquote}
+\textbf{For} basket has books get a book from basket \textbf{then} \textbf{if} book name equals "harry potter" add book to the shelf
+\end{greyquote}
+
+The sudo code of how it will be parsed is presented below:
+
+\begin{minted}[linenos, frame=lines, mathescape]{python}
+while (basket has books) {
+    get a book from the basket
+    if (book name equals "harry potter") {
+        add book to the shelf
+    }
+}
+\end{minted}
+
+The DAL representation would be as show below, engine will reason about this:
+
+\begin{minted}[linenos, frame=lines, mathescape]{python}
+    behavior basketHasBooks {
+        hasBooks = basketHasBooks(basket)
+        if (hasBooks){
+            goToBehavior("invoke_getBookFromBasket")
+        }
+    }
+
+    behavior invoke_getBookFromBasket {
+        book = getBookFromBasket()
+        if (book.name === "harry potter") {
+            goToBehavior("invoke_addBookToShelf")
+        }
+    }
+
+    behavior invoke_addBookToShelf {
+        addBookToShelf(shelf, book)
+        goToBehavior("basketHasBooks")
+    }
+\end{minted}
+
+Synthesized Implementation (in python):
+\begin{minted}[linenos, frame=lines, mathescape]{python}
+    while (basketHasBooks()):
+        book = getBookFromBasket()
+        if (book["name"] == "harry potter"):
+            addBookToShelf(book)
+        
+    
+\end{minted}
+
+
+\subsubsection{If}
+
+\subsubsection{Then}
+
+\subsubsection{While}
+

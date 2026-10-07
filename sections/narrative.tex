@@ -1,0 +1,75 @@
+In this section, I will build intuition for the role that each component plays by speaking generally about narratives using semantics used by humans in english. I will use it to demonstrate how the narrative can be constructed in a structured form and how that meaning can be used to construct more meaning. Then I will demonstrate how the meaning of narratives can be reasoned about to identify if it is internally consistent or if it has incorrect or missing meaning. Then I will discuss how the components outlined in this document work toward the same goal for software systems. 
+
+\subsubsection{Library Manager}
+
+Consider the following narrative and participants in the narrative. In this case, the world is defined with the librarian and shelf. The user interacts with the world through the librarian and narratives unfold. 
+
+\subsubsection*{Narratives}
+\begin{greyquote}
+    The librarian presents the user with the option to add a book or get a book from the library.\\
+
+    If the user selects the option to add a book, the librarian accepts a book by asking the user for the name and content. Then the librarian reads the first letter of the books name to place the book on the relevant shelf. Then the user is once again asked which action they want to take.\\
+
+    If the user selects the option to get a book, the librarian asks the user for the book name. The librarian reads the first letter of the book name and accesses the book from the correct slot on the shelf. After the librarian provides the user the book, the user is once again asked which action they want to take.
+\end{greyquote}
+
+\subsubsection*{Librarian}
+\begin{greyquote}
+    The librarian can present the user with a menu. \\
+    The librarian executes the users choice.\\
+    The librarian adds a book to the shelf.\\
+    The librarian gets a book from the shelf.
+\end{greyquote}
+
+\subsubsection*{Menu}
+\begin{greyquote}
+    The menu provides the user with the option to submit a book or get a book.
+\end{greyquote}
+
+\subsubsection*{Book}
+\begin{greyquote}
+    A book has a name and it has contents. Both the name and contents contain letters.
+\end{greyquote}
+
+\subsubsection*{Shelf}
+\begin{greyquote}
+    A shelf has slots for books. The slots are labeled using a letter.
+\end{greyquote}
+
+In this example, I am using the meaning of words in the english language. As part of human communication, we use shared meaning to coordinate. When I say the word Jump, that has a specific meaning. It includes the sequence of actions involved in propelling ones self off the ground or how it looks when jumping happens. When I say the word Lion, that includes the visual appearance of the lion, the sound, its strength etc. All of that is compressed into the meaning of a lion.
+
+In my narrative there are words which have meaning and we refer to these as nouns (including adjective and adverbs which modify or describe the noun). Then there are functional words like conjunctions (and, if, then etc.) and prepositions (in, on etc.) that connect the meaning together. The functional words create a narrative using the meaning. 
+
+I think this exercise is helpful because it helps build the relationship between meaning, narratives and ambiguity. In human communication, when I say, "the librarian added a book to the shelf", I am communicating a narrative that has been constructed using the meaning of the librarian, book, shelf while connecting them with an action (added a book) and functional words. When there is ambiguity in the meaning of the librarian, book or shelf, it creates potential for failure to realize the narratives intentions. Is it possible to add this book to the shelf? 
+
+This can only be answered by reasoning about the meaning of the book, shelf and the action of adding a book to the shelf. For example, if the shelf has slots of a certain size and the book is larger than the size of the slot, then the intention will fail. By reasoning about the world, the narratives can be modified so that the intentions will succeed by preventing narratives that are semantically invalid. It can also be seen that if two narratives are interacting, the success of that interaction is dependent on shared meaning. Without that shared meaning it will be impossible to reason about whether the interaction will succeed.
+
+To further discuss reasoning about the meaning of this world, I will use a diagram of the narrative by representing the narrative as behaviors of a closed semantic world, which can also be referred to as a design. Here a behavior is a semantic unit that transforms the world state in an unambiguous way. So the narrative can also be described as the behavior of the design.
+
+\begin{figure}[htbp]
+    \centering
+    \includesvg[
+        width=0.86\linewidth
+    ]{assets/library_manager_diagram.svg}
+    \caption{Library Manager Diagram}
+    \label{fig:library_manager_diagram}
+\end{figure}
+
+Using the structure of the design, we can reason about its meaning. First, it is evident from the design that the narratives establish the designs intentions. A design is said to be internally inconsistent if it makes assumptions that contradict its own meaning. As a result of this contradiction, it will be unable to realize its intentions because it permits conditions that make realizing its intentions not possible. For example, in this design, there is a behavior in which the first letter of the books name is accessed. However, the design accepts a book with no letters in its name with the intention of using the first letter of the book name.
+
+When a book with no letters in its name is accepted, the design is said to be in a semantically invalid state because the designs intentions cannot be realized. In order for it to realize its intentions, it must modify its behavior only accept books with letters in its name. Through this process, it can be said that the predicted failure is resolved by preventing the semantic invalidity from persisting. This process of identifying the failure can be described as reasoning about the meaning of world.
+
+Through the reasoning the design any internal inconsistency in the design can be eliminated and all known failures can be eliminated. However, when the design participates in reality, reality can refute the designs assumptions. This results in the design learning new meaning that it was previously unaware of and then through reasoning, the failure can be eliminated. 
+
+For example, in this example, its possible the shelf can only hold 100 books after which it will break. A failure will result in root cause analysis and the new semantics that is learnt will include the number of books in the shelf, the awareness of the maximum number of books and a refusal to add more books. Then the same process can be carried out and through reasoning any new failures can be eliminated.
+
+In this section, I was being very general with the language and meaning I used just to build intuition for the relationship between reasoning, meaning, ambiguity and the the design. In the next section, I will explain move onto software systems and how they can be reasoned about completely by making their meaning entirely unambiguous by construction.
+
+More to come.
+
+\subsubsection{Meaning of Software System}
+
+Unlike humans communication which has many factors that influence it, in the world of software systems, meaning can be made entirely unambiguous by construction. The design of a software system is a closed semantic world and the meaning of that world can be made entirely unambiguous and computable by constructing the meaning from computable semantic primitives that have unambiguous invariants. This allows an engine to completely reason about the world and diagnose failures in the construction of the world that are a result of missing or incorrect meaning.
+
+In the next section, I will discuss how the computable semantic primitives are defined and how they establish the atomic meaning of the world. After that, I will discuss how Artha uses the semantic toolkit to establish narratives and how the world is automatically constructed using the design abstraction language. Finally, I will discuss how the engine reasons about the meaning of the world using the structure.
+
