@@ -1,0 +1,51 @@
+This section contains additional thoughts relevant to this framework but couldn't be added to the rest of the sections. 
+
+\subsection{Automated Orchestration}
+
+Automated orchestration falls directly from the ability to build computable semantic models which have shared meaning. When a distributed system is defined, it also defines an orchestrator that has shared meaning with the design. It is through this shared meaning that orchestration is made automated and surgical because the state of the system being managed is unambiguous by design. 
+
+\begin{figure}[htbp]
+    \centering
+    \includesvg[
+        width=0.90\linewidth
+    ]{assets/AutomatedManagement.svg}
+    \caption{Automated Orchestration of Distributed System}
+    \label{fig:automted_orchestration}
+\end{figure}
+
+Figure~\ref{fig:automted_orchestration} shows shows a block diagram how of orchestrator can react to an unambiguous meaningful state to take the precise response because it knows the meaning of the CSM that it is managing by design.
+
+\begin{figure}[htbp]
+    \centering
+    \includesvg[
+        width=0.90\linewidth
+    ]{assets/AutomatedManagementFailure.svg}
+    \caption{Automated Orchestration of Recovery from Mechanical Failures}
+    \label{fig:automated_recovery_orchestration}
+\end{figure}
+
+Figure~\ref{fig:automated_recovery_orchestration} shows a block diagram of how an orchestrator can react to a failed state and take the necessary steps to recover the system. This is once again made possible because the failed state has unambiguous meaning to the orchestrator by design. At the same time, the learning loop described in a previous section works to ensure that the failure is automatically diagnosed and a deterministic learning process prevents the recurrence of the same failure.
+
+Ultimately, this isn't anything special, it is just an extension of the closed semantic world to include the meaning which establishes the conditions needed for the design to realize its intentions. Through semantically compatible interactions, the same principles that establish the correctness of a design apply here. This also means that the testing of the orchestrators response to meaningful states in the design can be automated.
+
+\subsection{Securing Interactions}
+
+As a result of this framework, interactions between and within designs now has unambiguous meaning. There are meaningful implications for securing systems because the intention of the interaction is unambiguous. While before, the mechanical sequence had to be correct, now the design can ensure that it is the right person that is communicating with it. If the design is looked at as the brain of the software system, then this ensures that the correct brain is speaking, making it more difficult to compromise a system.
+
+There are many approaches to implement this but one possibility is that DAL can be extended to generate a dynamic checksum along the narrative path to identify the unique brain that generated the narrative. Unlike traditional techniques which have to speculate about whether the intentions of a particular sequence are suspicious through practices like anomaly detection, this solution would automatically recognize suspicious intentions from construction. The security is is built into the narratives that are permitted in the closed semantic world. 
+
+There are also automated ways to test and verify how secure a system is by following the same principle of eliminating ambiguity using the CSM to answer meaningful questions about the system. A future where software systems understand each others intentions and meaning will be a more secure future. 
+
+\subsection{Automated Documentation}
+
+Traditionally, documentation was the developers best attempt to capture the meaning of the implemented system. The implementation of the design itself could be wrong and the documentation representing the implementation could also be wrong. This was then used by other developers to establish the necessary semantics to interact with the design correctly. It is clear that this relies on the skill of the developer heavily and can introduce bugs through human error at many levels.
+
+Through the processes established in this document, the documentation has become automated because the design is able to represent itself. More importantly, the designs themselves can verify that there is semantic compatibility between each other by ensuring that the necessary meaning has been established on both sides. In this sense, the documentation is the design and since it is representing itself, the documentation itself is used to verify the correctness of the semantics. 
+
+By enabling the meaning of the system to represent itself unambiguously as the documentation, software systems are made more reliable because it minimizes the possibility of errors.
+
+\subsection {Machine Driven Engineering}
+
+In this framework, the established meaning drives the automated development and management. To make this possible, the framework provides developers a semantic toolkit to specify the meaning of the world and refine it through feedback from the engine. The intelligence of the system is determined by the reasoning in the meaningful narratives of the world, so as a result, the developer is constructing deterministic intelligence.
+
+However, it is also clear that this framework is agnostic to whether the meaning is specified by a machine or a human. It only cares about the meaning that is established and using that to drive the automation. As a result, there are many interesting applications where a machine can be used to establish the meaning of the world and develop software that can realize its intentions. The complementary tool to this framework is intelligence that can achieve its intentions by establishing the meaning of the world and the reasoning about the meaning through its narratives.
