@@ -1,0 +1,59 @@
+In order for the engine to reason about the execution of the design, the semantic gap between the design and the implementation must be eliminated. If this is not done, then the engine cannot deterministically reason about the world because there will be no way to know if the semantics need to expand or if the implementation doesn't realize the meaning of the design.
+
+If the implementation does realize the meaning of the design faithfully, then all the automation that is enabled by the engine reasoning about the design can be leveraged. To make this possible, the design must be established as a Computable Semantic Model (CSM) that is built from Computable Semantic Primitives (CSP) and I will describe how in the following sections.
+
+\subsection{Implementing a Computable Semantic Model}
+A CSM is built by establishing the implementation of the designs meaning enabling the implementation of the design to be directly synthesized into an executable form. The design establishes the first behavior it exhibits and then the design reacts to each impulse from the environment until it reaches a semantically stable state.
+
+\begin{figure}[htbp]
+    \centering
+    \includesvg[
+        width=0.80\linewidth
+    ]{assets/csm.svg}
+    \caption{Computable Semantic Model}
+    \label{fig:csm}
+\end{figure}
+
+However, there is still the possibility that the provided implementation doesn't actually realize the meaning of the design, in which case, the engine cannot reason about the world in a reliable way. Moreover, the engine can only reason about the world based on the meaning that was specified. So unless the design makes all the relevant semantics available, the engine will be unable to determine the worlds correctness. So the engine will know that there is a failure and it won't be able to explain why until it learns the missing semantics.
+
+In the next section, I will describe how designs built from Computable Semantic Primitives addresses both of these problems.
+
+\subsection{Computable Semantic Primitives}
+
+Computable Semantic Primitives (CSP's) are primitive computable semantic units that can be used to construct the meaning of the semantic world. Since the world is constructed from meaningful atoms that have unambiguous invariants, it can be reasoned about completely to eliminate all semantically invalid narratives. Since the primitive units can be synthesized into an implementation by definition, this transforms the DAL into a declarative language that establishes the meaning of a closed semantic world and synthesizes the meaning of that world as an implementation, effectively making the design itself executable.
+
+\begin{figure}[htbp]
+    \centering
+    \includesvg[
+        width=0.95\linewidth
+    ]{assets/csp.svg}
+    \caption{Computable Semantic Model constructed from Computable Semantic Primitives}
+    \label{fig:csp}
+\end{figure}
+
+As previous sections mentioned, the engines ability to reason about the execution of the world is dependent on there being no semantic gap between the design and the implementation. Using CSP's solves this problem elegantly in multiple ways:
+\begin{enumerate}
+    \item It allows the engine to fully reason about the constructed world to eliminate any semantically invalid narratives. 
+    \item It allows the engine to reason about the execution to automatically diagnose any failures and motivate the necessary root cause analysis to learn new semantics.
+\end{enumerate}
+
+Now that the constructed model and the execution have the same meaning, the engine can automatically identify where the semantics need to expand because reality will refute the designs assumptions through failures. 
+
+However, this automation will still not be possible unless the engine actually has a complete account of the execution to diagnose the failure. In the next section, I will talk about the information that needs to be preserved to make this possible.
+
+\subsection{Automated Instrumentation}
+
+Since the design is an unambiguous structure, it isn't necessary to preserve all the execution information to be able to replay it. The design itself can identify the information that can't be deterministically computed by the design. This means that the synthesized implementation can be automatically synthesized to only instrument the non-deterministic information.
+
+\begin{figure}[htbp]
+    \centering
+    \includesvg[
+        width=0.95\linewidth
+    ]{assets/csm_instrumentation.svg}
+    \caption{Automated Instrumentation and Synthesis}
+    \label{fig:csm_instrumentation}
+\end{figure}
+
+As Figure~\ref{fig:csm_instrumentation} illustrates, the engine can use the unambiguous specification of the CSM to identify the necessary instrumentation. The information produced by the execution is then fed back into the engine where the failure is automatically diagnosed. In this way, the ways in which reality refutes the assumptions made by the design can be unambiguously identified and the learning process can be triggered.
+
+However, to truly make this an automated process, all the diagnostic data needs to be preserved at scale. Any missing data would introduce speculation, so there is a need for a solution address the practical problem while minimizing cost. In the next section, I will describe how this can be addressed by using the unambiguous domain structure of the data to apply domain specific compression.
